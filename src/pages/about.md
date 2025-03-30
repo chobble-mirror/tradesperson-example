@@ -1,17 +1,19 @@
 ---
 header_image: placeholder.jpg
-header_text: About Example
-meta_description:
+header_text: About Joe Example Building
+meta_description: Learn about Joe Example Building Services - your trusted building contractor in Manchester with 15+ years of experience
 meta_title: About
 eleventyNavigation:
   key: About
   order: 2
 ---
 
-## Integer feugiat iaculis augue
+## About Joe Example Building Services
 
-![Placeholder](/images/placeholder.jpg)
+![Joe Example at work](/images/placeholder.jpg)
 
-In hendrerit sapien dapibus et. Mauris vitae est auctor, pellentesque nisl a, congue ipsum. Curabitur suscipit sem massa, vel eleifend purus accumsan vitae. Nulla ut porttitor diam, nec auctor justo. In vitae augue vitae sapien iaculis tincidunt.
+Joe Example has been serving the Manchester community for over 15 years, delivering high-quality building services to homeowners and businesses alike. Born and raised in Manchester, Joe understands the local architecture and building requirements that make Manchester properties unique.
 
-Etiam non erat ut purus vestibulum finibus vitae id dui. In nibh dolor, vehicula eu eros sit amet, laoreet viverra sapien.
+After completing his apprenticeship and gaining City & Guilds qualifications, Joe established his own building company in 2008. Since then, he has built a reputation for reliability, craftsmanship, and honest service across Greater Manchester.
+
+All work is fully insured and guaranteed, giving you peace of mind when you choose Joe Example Building Services for your next project.

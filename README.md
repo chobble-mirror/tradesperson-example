@@ -1,6 +1,6 @@
-# The Chobble Template
+# The Chobble Template: Tradesperson Example
 
-**See this template in action at [example.chobble.com](https://example.chobble.com)**
+**See this template in action at [tradesperson-example.chobble.com](https://tradesperson-example.chobble.com)**
 
 **Want a website based on this template? Clone this repo, or hit me up at [Chobble.com](https://chobble.com).**
 

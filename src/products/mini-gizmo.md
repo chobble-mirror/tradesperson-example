@@ -1,20 +1,26 @@
 ---
-title: Mini Gizmo with Local Image
-short_description: This gizmo uses a local image file path
-price: £99.99
+title: Bathroom Renovation
+short_description: Transform your bathroom with a complete renovation
+price: From £7,500
 featured_image: placeholder-wide-2.jpg
 categories:
-  - gizmos
+  - renovations
 gallery: []
 specs:
-  - name: Material
-    value: Crystalized Flubber
-  - name: Weight
-    value: 1.2 kg
+  - name: Timeframe
+    value: 2-4 weeks
+  - name: Building Regulations
+    value: Full compliance guaranteed
+  - name: Warranty
+    value: 5-year workmanship guarantee
 features:
-  - Colorful blinking lights
-  - Makes whooshing sounds
-  - Self-cleaning surface
+  - Complete strip out and installation
+  - Plumbing and electrical work
+  - Tiling and waterproofing
+  - New fixtures and fittings
+  - Ventilation and heating
 ---
 
-This is a mini gizmo that demonstrates using a local image path. The system should look for the image in the /images/ directory.
+Renovate your bathroom with Joe Example Building Services for a perfect combination of style, functionality and quality craftsmanship. We handle every aspect of bathroom renovation, from initial design to the final finishing touches.
+
+Our comprehensive bathroom renovation service includes removal of existing fixtures, plumbing and electrical work, installation of new fixtures, tiling, and decorating. We work with trusted suppliers to offer a wide range of bathroom fixtures and fittings to suit all budgets and styles.

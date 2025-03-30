@@ -1,14 +1,14 @@
 ---
 header_image: placeholder.jpg
-header_text: Products
-meta_description:
-meta_title: Products
+header_text: Our Services
+meta_description: Building services in Manchester - extensions, renovations, loft conversions, kitchen fitting and more
+meta_title: Building Services
 layout: categories.html
 eleventyNavigation:
-  key: Products
+  key: Services
   order: 3
 ---
 
-# Our Products
+# Building Services
 
-Suspendisse sit amet gravida turpis, ac tincidunt ex. Etiam ac justo elit. Donec libero ex, egestas et tempor non, egestas hendrerit neque.
+Joe Example Building Services offers a comprehensive range of building and construction services throughout Manchester. From small repairs to full home extensions, all work is completed to the highest standard with careful attention to detail.

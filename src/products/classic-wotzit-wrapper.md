@@ -1,33 +1,33 @@
 ---
-title: Classic Wotzit Wrapper
-short_description: Timeless structured wrapper for formal occasions
-price: £149.99
+title: Single-Story Extension
+short_description: Expand your living space with a quality extension
+price: From £25,000
 featured_image: placeholder-wide-1.jpg
 categories:
-  - premium-wotzits
-  - wotzits
+  - extensions
+  - loft-conversions
 gallery: []
 specs:
-  - name: Material
-    value: 98% Cloud Fiber, 2% Flex Membrane
-  - name: Fit
-    value: Regular adaptation
-  - name: Closure
-    value: Magnetic sealing
-  - name: Care
-    value: Self-cleaning only
+  - name: Timeframe
+    value: 8-12 weeks
+  - name: Planning Permission
+    value: Usually required
+  - name: Building Regulations
+    value: Full compliance assured
+  - name: Warranty
+    value: 10-year guarantee
 features:
-  - Geometric edge pattern
-  - Two-point sealing system
-  - Three internal compartments
-  - Four external access points
-  - Available in azure, obsidian, and silver
+  - Bespoke design to match existing property
+  - Full architectural planning service
+  - All building regulations met
+  - Foundations, walls, roof and finishes
+  - Electrical and plumbing installations included
 ---
 
-This classic Wotzit Wrapper combines timeless style with modern flexibility. The regular adaptation provides a clean outline without restricting movement, while the premium cloud fiber blend offers breathability with just the right amount of flexibility.
+A single-story extension is the perfect way to add valuable space to your home. Our expert team handles the entire process from initial design through to the final finishing touches, creating a seamless addition to your property.
 
-Perfect for formal gatherings, important meetings, or elevating your casual appearance, this versatile wrapper pairs well with any other wotzits, gadgets, or even simple widgets. The geometric edge pattern and two-point sealing system create a traditional look that never goes out of style.
+Our extensions are built to the highest standards using quality materials that complement your existing home's appearance. Whether you're looking to expand your kitchen, add a dining room, or create a new living space, we'll work with you to design the ideal solution.
 
-Practical details include three internal compartments for secure storage of essentials and four external access points. Available in azure, obsidian, and silver to complement any collection.
+The process begins with a free consultation to understand your needs, followed by architectural drawings and planning applications. Our experienced builders then construct your extension with minimal disruption to your daily life.
 
-For best results, activate self-cleaning mode only to maintain the wrapper's shape and appearance.
+All electrical and plumbing work is carried out by certified professionals, and we handle all building regulation inspections to ensure full compliance.

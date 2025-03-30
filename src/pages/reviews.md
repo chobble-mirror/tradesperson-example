@@ -1,7 +1,7 @@
 ---
 header_image: placeholder.jpg
-header_text: Reviews
-meta_description:
+header_text: Customer Reviews
+meta_description: Read what our customers say about Joe Example Building Services in Manchester - testimonials from satisfied clients
 meta_title: Reviews
 layout: reviews.html
 eleventyNavigation:
@@ -9,6 +9,6 @@ eleventyNavigation:
   order: 4
 ---
 
-## Sed in eros velit
+## What Our Customers Say
 
-In in ante nec ante interdum consectetur. Sed finibus enim eget nulla euismod tincidunt et ac sapien. Aenean commodo, ligula sit amet imperdiet vehicula, felis dolor convallis nulla, at venenatis nisl ipsum convallis dolor.
+At Joe Example Building Services, we pride ourselves on customer satisfaction. Don't just take our word for it - read what our Manchester clients have to say about our building work, reliability, and professionalism.

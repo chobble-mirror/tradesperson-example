@@ -1,35 +1,37 @@
 ---
-title: PocketGizmo X1
-short_description: Premium pocket gizmo with advanced vision system
-price: £799.99
+title: Loft Conversion
+short_description: Convert your attic into valuable living space
+price: From £30,000
 featured_image: placeholder-wide-3.jpg
 categories:
-  - pocket-gizmos
-  - gizmos
+  - extensions
+  - loft-conversions
 gallery: []
 specs:
-  - name: Display
-    value: 6.5" Dimensional Screen
-  - name: Processor
-    value: Octa-pulse 2.8THz
-  - name: Memory
-    value: 8GB
-  - name: Storage
-    value: 256GB Cloud Bubble
-  - name: Vision Lenses
-    value: Triple 12X + 48X + 12X
-  - name: Power Cell
-    value: 4500 zaps
+  - name: Timeframe
+    value: 8-12 weeks
+  - name: Planning Permission
+    value: Depends on design
+  - name: Building Regulations
+    value: Full compliance assured
+  - name: Structural Changes
+    value: Professional structural assessment
+  - name: Warranty
+    value: 10-year guarantee
+  - name: Accessibility
+    value: Proper staircase installation
 features:
-  - Completely waterproof
-  - Instant connectivity
-  - Quick energy absorption
-  - Contactless power sharing
-  - Identity recognition
+  - Full structural assessment and modifications
+  - Proper insulation and ventilation
+  - New windows and skylights
+  - Quality finish including plastering and decorating
+  - Electrical installations to building regulations
 ---
 
-The PocketGizmo X1 offers an exceptional portable experience with cutting-edge technology and premium design. Its revolutionary triple vision system allows you to capture professional-quality holograms in any environment, while the powerful processor ensures smooth performance for entertainment and multi-functioning.
+Transform your unused attic space into a valuable new room with our professional loft conversion service. Whether you're looking to add a bedroom, bathroom, office, or playroom, our team can help you maximize your home's potential.
 
-The vibrant 6.5" Dimensional Screen delivers stunning visuals with true-to-life depth perception, perfect for streaming content and browsing. With instant connectivity, you'll experience ultra-fast data transfer and minimal delay.
+Every loft conversion begins with a thorough structural assessment to determine the best approach. We handle all structural modifications, including installing support beams, floor joists, and proper access via a staircase.
 
-Power duration is impressive, with the 4500 zap cell easily lasting a full day of heavy use. When you do need to recharge, both quick energy absorption and contactless power sharing options are available.
+Our loft conversions include proper insulation, ventilation, and windows to create a comfortable, light-filled space that can be used year-round. All electrical and plumbing work is completed to current building regulations by certified professionals.
+
+We take care of all the finishing touches, from plastering and decorating to fitting doors and skirting boards, delivering a fully completed space ready for immediate use.

@@ -1,7 +1,7 @@
 ---
 header_image: placeholder.jpg
-header_text: Contact Example
-meta_description:
+header_text: Contact Joe Example
+meta_description: Get in touch with Joe Example Building Services in Manchester - free quotes for all building work
 meta_title: Contact
 
 layout: contact.html
@@ -10,8 +10,13 @@ eleventyNavigation:
   order: 5
 ---
 
-## Cras ut eleifend quam.
+## Get In Touch
 
-Nullam tempus augue pharetra augue luctus consequat. Nunc semper rutrum urna, ut varius ipsum feugiat eget. Maecenas maximus sem id mi porttitor dignissim. Quisque turpis justo, accumsan vel ex id, gravida auctor libero.
+Contact Joe Example Building Services today for a free, no-obligation quote on your building project. We serve Manchester and surrounding areas with professional building services.
 
-**If you're looking for my real contact details check out my site at [chobble.com/contact](https://chobble.com/contact/)**
+### Contact Information
+
+- **Phone:** 0161 123 4567
+- **Email:** info@joeexample.co.uk
+- **Hours:** Monday-Friday 8am-6pm, Saturday 9am-2pm
+- **Address:** 123 Builder Street, Manchester, M1 1AA

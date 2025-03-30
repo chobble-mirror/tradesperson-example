@@ -1,16 +1,16 @@
 ---
 header_image: placeholder.jpg
-header_text: Example Team
-meta_description:
-meta_title: Team
+header_text: Our Team
+meta_description: Meet the team at Joe Example Building Services - qualified professionals serving Manchester
+meta_title: Our Team
 layout: team.html
 eleventyNavigation:
   key: Team
   parent: About
 ---
 
-## Quisque viverra
+## Our Building Team
 
-Ut purus et scelerisque.
+At Joe Example Building Services, we employ only the most skilled and reliable tradespeople to ensure your project is completed to the highest standard.
 
-Nulla non lacus finibus, viverra leo id, ornare orci. Quisque sit amet fermentum magna, in finibus est. In tristique viverra consectetur. Aliquam lacinia, nulla ac interdum consequat, quam ante semper dui, non maximus metus sapien efficitur felis.
+Our team includes qualified builders, carpenters, plumbers, and electricians - allowing us to handle all aspects of your building project in-house. All team members are fully insured, hold relevant qualifications, and have extensive experience in the Manchester construction industry.

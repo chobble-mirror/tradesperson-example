@@ -1,11 +1,11 @@
 ---
-title: UltraWidget Pro
-short_description: Lightweight, powerful widget for professionals
-price: £1299.99
+title: Kitchen Installation
+short_description: Complete kitchen design and fitting service
+price: From £15,000
 featured_image: placeholder-wide-4.jpg
 categories:
-  - premium-widgets
-  - widgets
+  - renovations
+  - kitchen-fitting
 gallery:
   Front: placeholder-square-7.jpg
   Back: placeholder-square-6.jpg
@@ -15,30 +15,30 @@ gallery:
   Not in use: placeholder-square-2.jpg
   Invisible: placeholder-square-1.jpg
 specs:
-  - name: Display
-    value: 14" Holographic
-  - name: Processor
-    value: Quantum Core X7
-  - name: Memory
-    value: 16GB Crystal Storage
-  - name: Storage
-    value: 1TB Bubble Drive
-  - name: Graphics
-    value: Integrated Rainbow Projector
-  - name: Power Cell
-    value: Up to 12 hours
+  - name: Timeframe
+    value: 3-6 weeks
+  - name: Design Process
+    value: Full 3D designs included
+  - name: Cabinet Quality
+    value: Premium materials with soft-close
+  - name: Worktops
+    value: Multiple options available
+  - name: Appliances
+    value: Supply and installation
+  - name: Warranty
+    value: 5-year workmanship guarantee
 features:
-  - Ultra-thin design (0.6")
-  - Glow-in-the-dark control panel
-  - Biometric scanner
-  - Universal connectivity ports
-  - Surround sound resonators
+  - Professional design service
+  - Full removal of existing kitchen
+  - Electrical and plumbing modifications
+  - Quality cabinets and worktops
+  - Tiling and flooring installation
 ---
 
-The UltraWidget Pro is designed for professionals who demand performance without sacrificing portability. Weighing just 2.8 pounds with a sleek 0.6" profile, this widget is perfect for creating on the go.
+Create your dream kitchen with Joe Example Building Services. Our comprehensive kitchen installation service covers everything from initial design through to the final finishing touches, delivering a beautiful, functional space that meets your exact requirements.
 
-Powered by the latest Quantum Core X7 processor and 16GB of Crystal Storage, the UltraWidget Pro handles demanding calculations with ease. The 1TB Bubble Drive provides ample storage and lightning-fast load times for all your projects and applications.
+Our kitchen installation process starts with a detailed consultation to understand your needs, preferences, and budget. Our designer will create 3D visualizations to help you see exactly how your new kitchen will look before any work begins.
 
-The stunning 14" Holographic display offers exceptional clarity and dimensional accuracy, ideal for creative work and content visualization. With surround sound resonators, you'll enjoy immersive audio whether you're in a virtual conference or experiencing multimedia content.
+We handle the complete installation, including removal of your existing kitchen, plumbing and electrical work, fitting of cabinets and worktops, and installation of appliances. Our team of skilled tradespeople ensures every aspect of your new kitchen is fitted to the highest standard.
 
-Security features include a biometric scanner for quick and secure access, while universal connectivity ports provide versatile options for all your peripheral gadgets.
+Choose from a wide range of cabinet styles, worktop materials, and appliances to create a kitchen that perfectly matches your taste and lifestyle. We work with trusted suppliers to offer quality products at competitive prices.
