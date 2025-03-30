@@ -1,0 +1,28 @@
+---
+layout: base.html
+---
+
+{{ content }}
+
+{%- if collections.news.size > 0 -%}
+  <hr />
+  <h3>Latest Posts</h3>
+  {% include "news-post-list.html", limit: 2 %}
+{%- endif -%}
+
+{%- if collections.category.size > 0 -%}
+  <hr />
+
+  <h3>Product Categories</h3>
+
+  {%- assign show_subcategories = true -%}
+  {%- assign show_product_count = false -%}
+  {%- assign show_button = true -%}
+
+  <ul class="categories">
+    {%- assign categories = collections.category | getFeaturedCategories -%}
+    {%- for category in categories limit: 3 -%}
+      {%- include "category-list-item.html" -%}
+    {%- endfor -%}
+  </ul>
+{%- endif -%}

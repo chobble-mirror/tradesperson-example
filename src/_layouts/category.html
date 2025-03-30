@@ -1,0 +1,40 @@
+---
+layout: base.html
+---
+
+<h1>{{ title }}</h1>
+
+{% if parent %}
+  {% assign parentCategory = collections.category | where: "fileSlug", parent | first %}
+  {% if parentCategory %}
+    <a href="{{ parentCategory.url }}/">
+      Back to {{ parentCategory.data.title }}
+    </a>
+  {% endif %}
+{% endif %}
+
+{% assign categories = collections.category %}
+{% assign categories = categories | where: "data.parent", page.fileSlug %}
+
+{{ content }}
+
+{% if childCategories.size > 0 %}
+  <h2>Subcategories</h2>
+  <ul class="items">
+    {% for category in childCategories %}
+      {% assign show_subcategories = true %}
+      {% assign show_product_count = false %}
+      {% include "category-list-item.html" %}
+    {% endfor %}
+  </ul>
+{% endif %}
+
+{% assign products = collections.product | getProductsByCategory: page.fileSlug %}
+{% if products.size > 0 %}
+  <h2>Products</h2>
+  <ul class="items">
+    {% for product in products %}
+      {% include "product-list-item.html" %}
+    {% endfor %}
+  </ul>
+{% endif %}

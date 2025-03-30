@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+{%- include "head.html" -%}
+<body class="{{- layout | replace: ".html", "" -}}">
+  {%- include "header.html" -%}
+  <main>
+    {%- include "navigation.html" -%}
+    <article id="content">
+      {{- content -}}
+    </article>
+    <article class="right">
+      {%- renderSnippet "right-content" -%}
+    </article>
+  </main>
+  {%- include "footer.html" -%}
+</body>
+</html>
