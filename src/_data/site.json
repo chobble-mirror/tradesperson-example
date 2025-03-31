@@ -4,12 +4,12 @@
 	"botpoison_public_key": "pk_bbb182a9-1ff3-4d9a-839c-06e45f41a6e6",
 	"url": "https://tradesperson-example.chobble.com",
 	"socials": {
-		"facebook": "https://tradesperson-example.chobble.com",
-		"instagram": "https://tradesperson-example.chobble.com",
-		"tiktok": "https://tradesperson-example.chobble.com",
-		"google": "https://tradesperson-example.chobble.com",
-		"whatsapp": "https://tradesperson-example.chobble.com",
-		"rss": "/feed.xml"
+		"Facebook": "https://tradesperson-example.chobble.com",
+		"Instagram": "https://tradesperson-example.chobble.com",
+		"TikTok": "https://tradesperson-example.chobble.com",
+		"Google": "https://tradesperson-example.chobble.com",
+		"WhatsApp": "https://tradesperson-example.chobble.com",
+		"RSS": "/feed.xml"
 	},
 	"sticky_mobile_nav": true,
 	"template_repo_url": "https://git.chobble.com/chobble/chobble-template"
