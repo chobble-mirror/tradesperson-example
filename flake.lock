@@ -1,21 +1,23 @@
 {
   "nodes": {
-    "flake-utils": {
+    "chobble-template": {
       "inputs": {
-        "systems": "systems"
+        "nixpkgs": [
+          "nixpkgs"
+        ]
       },
       "locked": {
-        "lastModified": 1731533236,
-        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
-        "type": "github"
+        "lastModified": 1743863963,
+        "narHash": "sha256-sNtbDHwPmnyWtEkWoix705NWwmuAOS4v+y7w+WHTGuE=",
+        "ref": "refs/heads/main",
+        "rev": "4ec120dcefefba20dd0f6c6e2a2eb95492ef27a5",
+        "revCount": 126,
+        "type": "git",
+        "url": "https://git.chobble.com/chobble/chobble-template.git"
       },
       "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
+        "type": "git",
+        "url": "https://git.chobble.com/chobble/chobble-template.git"
       }
     },
     "nixpkgs": {
@@ -32,23 +34,8 @@
     },
     "root": {
       "inputs": {
-        "flake-utils": "flake-utils",
+        "chobble-template": "chobble-template",
         "nixpkgs": "nixpkgs"
-      }
-    },
-    "systems": {
-      "locked": {
-        "lastModified": 1681028828,
-        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
-        "owner": "nix-systems",
-        "repo": "default",
-        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-systems",
-        "repo": "default",
-        "type": "github"
       }
     }
   },
