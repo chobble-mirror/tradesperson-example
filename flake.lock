@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1743863963,
-        "narHash": "sha256-sNtbDHwPmnyWtEkWoix705NWwmuAOS4v+y7w+WHTGuE=",
+        "lastModified": 1743877417,
+        "narHash": "sha256-2WZdTfIfzcz7bJfep4rFCPXo/ZsAbobscu2xisF3JKE=",
         "ref": "refs/heads/main",
-        "rev": "4ec120dcefefba20dd0f6c6e2a2eb95492ef27a5",
-        "revCount": 126,
+        "rev": "11c3a507e78c9726a68f53913f0cc2897435961d",
+        "revCount": 127,
         "type": "git",
         "url": "https://git.chobble.com/chobble/chobble-template.git"
       },
@@ -23,8 +23,8 @@
     "nixpkgs": {
       "locked": {
         "lastModified": 0,
-        "narHash": "sha256-tpJsHMUPEhEnzySoQxx7+kA+KUtgWqvlcUBqROYNNt0=",
-        "path": "/nix/store/hc0s89bfk3j52scsq7vs7j7bx73ppp6b-source",
+        "narHash": "sha256-s1KLDALEeqy+ttrvqV3jx9mBZEvmthQErTVOAzbjHZs=",
+        "path": "/nix/store/hvs4if4zly4mp0fhbh86vh208x6fs8fg-source",
         "type": "path"
       },
       "original": {
