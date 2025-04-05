@@ -34,7 +34,12 @@
             ${pkgs.rsync}/bin/rsync \
               --recursive \
               --exclude="README.md" \
-              --include="*.jpg,*.jpeg,*.webp,*.png,*.md" \
+              --include="*.jpg" \
+              --include="*.jpeg" \
+              --include="*.webp" \
+              --include="*.png" \
+              --include="*.md" \
+              --include="site.json" \
               "${self}/" $out/src/
           '';
 
