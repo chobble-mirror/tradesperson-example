@@ -36,10 +36,12 @@
               "installPhase"
             ];
             setupTemplatePhase = ''
-              cp -r ${chobble-template}/* ./
-              cp -r ${chobble-template}/.[!.]* ./ 2>/dev/null || true
-              find src -name "*.md" -type f -delete
-              rm -rf src/images/*
+              ${pkgs.rsync}/bin/rsync -a --update \
+                --exclude="*.md" \
+                --exclude="src/images/*" \
+                ${chobble-template}/ ./
+
+              mkdir -p src/images
             '';
             configurePhase = templatePackages.site.configurePhase;
             buildPhase = templatePackages.site.buildPhase;
