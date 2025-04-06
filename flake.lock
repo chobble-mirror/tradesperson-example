@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1743900318,
-        "narHash": "sha256-fWlK2T2AH/ruNQPjX7o1/FUCa+y5xwPciU7Q6+1c8g4=",
+        "lastModified": 1743938016,
+        "narHash": "sha256-CeICCt+EM1T8wzLI94JV9vJEIX0kAbt7AsCiaHsdECA=",
         "ref": "refs/heads/main",
-        "rev": "5bf3722cf65e1ffa7180747a7baf9c6c306e7f4f",
-        "revCount": 139,
+        "rev": "848b4af2cefc15c353fb4757b2e5bc5f402d22b4",
+        "revCount": 141,
         "type": "git",
         "url": "https://git.chobble.com/chobble/chobble-template.git"
       },
