@@ -14,7 +14,12 @@
       chobble-template,
     }:
     let
-      systems = [ "x86_64-linux" ];
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+        "x86_64-darwin"
+        "aarch64-darwin"
+      ];
       forAllSystems = f: nixpkgs.lib.genAttrs systems (system: f system);
     in
     {
@@ -22,6 +27,7 @@
         system:
         let
           pkgs = nixpkgs.legacyPackages.${system};
+
           sourcePrep = pkgs.runCommand "chobble-template-source" { } ''
             mkdir -p $out
             ${pkgs.rsync}/bin/rsync \
@@ -38,18 +44,14 @@
               "${self}/" $out/src/
           '';
 
-          finalBuild =
-            let
-              importedFlake = import "${sourcePrep}/flake.nix";
-              outputs = importedFlake.outputs {
-                self = sourcePrep;
-                nixpkgs = nixpkgs;
-              };
-            in
-            outputs.packages.${system}.site;
+          importedFlake = import "${sourcePrep}/flake.nix";
+          outputs = importedFlake.outputs {
+            self = sourcePrep;
+            nixpkgs = nixpkgs;
+          };
+          finalBuild = outputs.packages.${system}.site;
         in
         {
-          site = finalBuild;
           default = finalBuild;
         }
       );
