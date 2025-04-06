@@ -1,0 +1,44 @@
+{
+  "nodes": {
+    "chobble-template": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1743938016,
+        "narHash": "sha256-CeICCt+EM1T8wzLI94JV9vJEIX0kAbt7AsCiaHsdECA=",
+        "ref": "refs/heads/main",
+        "rev": "848b4af2cefc15c353fb4757b2e5bc5f402d22b4",
+        "revCount": 141,
+        "type": "git",
+        "url": "https://git.chobble.com/chobble/chobble-template.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.chobble.com/chobble/chobble-template.git"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 0,
+        "narHash": "sha256-s1KLDALEeqy+ttrvqV3jx9mBZEvmthQErTVOAzbjHZs=",
+        "path": "/nix/store/hvs4if4zly4mp0fhbh86vh208x6fs8fg-source",
+        "type": "path"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "root": {
+      "inputs": {
+        "chobble-template": "chobble-template",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

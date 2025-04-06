@@ -2,6 +2,5 @@ result
 .direnv
 .sass-cache
 _site
-flake.lock
 node_modules
 package.json
