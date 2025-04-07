@@ -2,8 +2,9 @@
 
 **See this template in action at:**
 
-- [tradesperson-example.chobble.com](https://tradesperson-example.chobble.com)
-- [example.chobble.com](https://example.chobble.com)
+- [tradesperson-example.chobble.com](https://tradesperson-example.chobble.com) (Neocities)
+- [example-bunny.chobble.com](https://example-bunny.chobble.com) (Bunny)
+- [example.chobble.com](https://example.chobble.com) (Neocities)
 
 **Want a website based on this template? Clone this repo, or hit me up at [Chobble.com](https://chobble.com).**
 

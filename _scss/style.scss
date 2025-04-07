@@ -15,6 +15,32 @@
   --line-height: 1.8;
 }
 
+@font-face {
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/assets/fonts/bebas-neue-latin-400-normal.woff2) format('woff2'),
+       url(/assets/fonts/bebas-neue-latin-400-normal.woff) format('woff'); 
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  src: url(/assets/fonts/montserrat-latin-400-normal.woff2) format('woff2'),
+       url(/assets/fonts/montserrat-latin-400-normal.woff) format('woff'); 
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  src: url(/assets/fonts/montserrat-latin-700-normal.woff2) format('woff2'),
+       url(/assets/fonts/montserrat-latin-700-normal.woff) format('woff'); 
+}
+
 * {
   box-sizing: border-box;
 }
@@ -24,6 +50,8 @@ body {
   background: linear-gradient(135deg, #222222 0%, #333333 50%, #222222 100%);
   background-attachment: fixed;
   position: relative;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 400;
 
   &::before {
     content: "";
@@ -36,10 +64,6 @@ body {
     opacity: 0.5;
     z-index: -1;
   }
-}
-
-body {
-  font-family: "Montserrat", Arial, sans-serif;
 }
 
 h1,
