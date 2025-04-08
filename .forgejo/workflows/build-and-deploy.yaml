@@ -17,15 +17,15 @@ jobs:
   build:
     runs-on: native
     steps:
-      - name: Checkout
+      - name: Checkout this repo
         uses: actions/checkout@v4
         with:
           path: source
 
-      - name: Checkout
+      - name: Checkout Chobble Template
         uses: actions/checkout@v4
         with:
-          repository: "chobble-mirror/chobble-template"
+          repository: "chobble/chobble-template"
           path: template
 
       - name: Persist Eleventy .cache
