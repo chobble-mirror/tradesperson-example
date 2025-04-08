@@ -6,12 +6,6 @@ on:
 
 env:
   NEOCITIES_API_KEY: ${{ secrets.NEOCITIES_API_KEY }}
-  TEMPLATE_REPO: "https://git.chobble.com/chobble/chobble-template.git"
-  TEMPLATE_PATH: ${{ github.workspace }}/template
-  COMBINED_PATH: ${{ github.workspace }}/combined
-  RESULT_PATH: ${{ github.workspace }}/combined/result-/
-  BUILT_SITE_PATH: ${{ github.workspace }}/built-site
-  CACHE_PATH: ${{ github.workspace }}/.image-cache
 
 jobs:
   build:
@@ -25,7 +19,7 @@ jobs:
       - name: Checkout Chobble Template
         uses: actions/checkout@v4
         with:
-          repository: chobble/chobble-template
+          repository: chobble/chobble-templateTemplate
           ref: main
           path: template
 
@@ -37,31 +31,34 @@ jobs:
           fail-on-cache-miss: false
 
       - name: Make combined dir
-        run: mkdir -p "${{ env.COMBINED_PATH }}"
+        run: mkdir combined
 
       - name: Copy template files to combined dir
         run: |
           rsync \
             --recursive \
+            --verbose \
             --no-perms \
             --chmod=ugo=rwX \
             --delete \
             --exclude=".git" \
             --exclude="node_modules" \
             --exclude="*.md" \
-            "${{ env.TEMPLATE_PATH }}/" "${{ env.COMBINED_PATH }}/"
+            template/ \
+            combined/
 
-      - name: Overlay our repo files into combined dir
+      - name: Overlay our repo files into combined src
         run: |
           rsync \
             --recursive \
+            --verbose \
             --exclude=".git" \
             --exclude="*.nix" \
             --exclude="README.md" \
             --exclude=".forgejo" \
             --exclude=".image-cache" \
-            "${{ github.workspace }}/source/" \
-            "${{ env.COMBINED_PATH }}/src/"
+            source \
+            combined/src/
 
       - name: Copy .image-cache folder in separately
         run: |
@@ -71,11 +68,11 @@ jobs:
             --chmod=ugo=rwX \
             --include="*.jpeg" \
             --include="*.webp" \
-            "${{ github.workspace }}/source/.image-cache" \
-            "${{ env.COMBINED_PATH }}/"
+            source/.image-cache \
+            combined/
 
       - name: Make Forgejo cache dir
-        run: mkdir -p "${{ env.CACHE_PATH }}"
+        run: mkdir -p .image-cache
 
       - name: Copy Forgejo cache into combined dir
         run: |
@@ -85,31 +82,32 @@ jobs:
             --chmod=ugo=rwX \
             --include="*.jpeg" \
             --include="*.webp" \
-            "${{ env.CACHE_PATH }}" "${{ env.COMBINED_PATH }}/"
+            .image-cache \
+            combined/
 
       - name: Update site.json with secrets
         run: |
           sed -i \
             's/"formspark_id": null/"formspark_id": "${{ secrets.FORMSPARK_ID }}"/g' \
-            "${{ env.COMBINED_PATH }}/src/_data/site.json"
+            "combined/src/_data/site.json"
           sed -i \
             's/"botpoison_public_key": null/"botpoison_public_key": "${{ secrets.BOTPOISON_PUBLIC_KEY }}"/g' \
-            "${{ env.COMBINED_PATH }}/src/_data/site.json"
+            "combined/src/_data/site.json"
 
       - name: Fix permissions
         run: |
-          find "${{ env.COMBINED_PATH }}" -type d -exec chmod 755 {} \;
-          find "${{ env.COMBINED_PATH }}" -type f -exec chmod 644 {} \;
+          find combined -type d -exec chmod 755 {} \;
+          find combined -type f -exec chmod 644 {} \;
 
       - name: List build dir
         run: |
-          echo $(ls -al "${{ env.COMBINED_PATH }}")
-          echo $(ls -al "${{ env.COMBINED_PATH }}/.image-cache")
+          echo $(ls -al combined)
+          echo $(ls -al combined/.image-cache)
 
       - name: Build with Nix
         id: build
         run: |
-          cd ${{ env.COMBINED_PATH }}
+          cd combined
           nix-fast-build \
             --skip-cached \
             --flake ".#packages.x86_64-linux.site" \
@@ -121,8 +119,8 @@ jobs:
             --delete \
             --include="*.jpeg" \
             --include="*.webp" \
-            "${{ env.RESULT_PATH }}/.image-cache" \
-            "${{ env.CACHE_PATH }}"
+            result-/.image-cache \
+            .image-cache
 
       - name: Save cache
         uses: actions/cache/save@v4
@@ -132,16 +130,11 @@ jobs:
 
       - name: Copy built site out of result
         run: |
-          mkdir -p "${{ env.BUILT_SITE_PATH }}"
+          mkdir built-site
           rsync -a \
             --exclude=".image-cache" \
-            "${{ env.RESULT_PATH }}" \
-            "${{ env.BUILT_SITE_PATH }}/"
-
-      - name: Fix built site path permissions
-        run: |
-          find "${{ env.BUILT_SITE_PATH }}" -type d -exec chmod 755 {} \;
-          find "${{ env.BUILT_SITE_PATH }}" -type f -exec chmod 644 {} \;
+            result-/ \
+            built-site/
 
       - name: Deploy to Neocities
         uses: bcomnes/deploy-to-neocities@v3
@@ -156,7 +149,7 @@ jobs:
         uses: R-J-dev/bunny-deploy@v2.0.6
         with:
           access-key: ${{ secrets.BUNNY_ACCESS_KEY }}
-          directory-to-upload: "${{ env.BUILT_SITE_PATH }}"
+          directory-to-upload: built-site
           storage-endpoint: "https://storage.bunnycdn.com"
           storage-zone-name: "chobble-tradesperson-example"
           storage-zone-password: ${{ secrets.BUNNY_STORAGE_ZONE_PASSWORD }}
@@ -165,3 +158,9 @@ jobs:
           enable-purge-pull-zone: true
           pull-zone-id: "3573523"
           replication-timeout: "15000"
+
+      - name: Remove result and fix permissions
+        run: |
+          rm -rf result-
+          find . -type d -exec chmod 755 {} \;
+          find . -type f -exec chmod 644 {} \;
