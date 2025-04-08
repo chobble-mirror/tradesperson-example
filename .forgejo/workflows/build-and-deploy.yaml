@@ -19,7 +19,7 @@ jobs:
       - name: Checkout Chobble Template
         uses: actions/checkout@v4
         with:
-          repository: chobble/chobble-templateTemplate
+          repository: chobble/chobble-template
           ref: main
           path: template
 
