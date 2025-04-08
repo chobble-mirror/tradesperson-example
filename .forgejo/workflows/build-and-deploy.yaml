@@ -139,9 +139,3 @@ jobs:
           enable-purge-pull-zone: true
           pull-zone-id: "3573523"
           replication-timeout: "15000"
-
-      - name: Delete temporary directories
-        run: |
-          rm -rf "${{ env.TEMPLATE_PATH }}"
-          rm -rf "${{ env.COMBINED_PATH }}"
-          rm -rf "${{ env.BUILT_SITE_PATH }}"
