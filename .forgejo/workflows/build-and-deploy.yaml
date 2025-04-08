@@ -88,6 +88,10 @@ jobs:
           find "${{ env.COMBINED_PATH }}" -type d -exec chmod 755 {} \;
           find "${{ env.COMBINED_PATH }}" -type f -exec chmod 644 {} \;
 
+      - name: List build dir
+        run: |
+          nix-shell -p exa --run "exa --tree -al ${{ env.COMBINED_PATH }}"
+
       - name: Build with Nix
         id: build
         run: |
