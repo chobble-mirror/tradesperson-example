@@ -102,6 +102,12 @@ jobs:
           rsync -a \
             "$CACHE_SRC/" \
             "${{ env.CACHE_PATH }}"
+            
+      - name: Fix cache permissions
+        run: |
+          # Fix permissions on cache directory to ensure runner can read and delete files
+          find "${{ env.CACHE_PATH }}" -type d -exec chmod 755 {} \;
+          find "${{ env.CACHE_PATH }}" -type f -exec chmod 644 {} \;
 
       - name: Save cache
         uses: actions/cache/save@v4
