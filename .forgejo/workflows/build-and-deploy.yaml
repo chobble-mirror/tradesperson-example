@@ -5,8 +5,13 @@ on:
   workflow_dispatch:
 
 env:
-  NIX_PATH: nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos
   NEOCITIES_API_KEY: ${{ secrets.NEOCITIES_API_KEY }}
+  TEMPLATE_REPO: "https://git.chobble.com/chobble/chobble-template.git"
+  TEMPLATE_PATH: ${{ github.workspace }}/template
+  COMBINED_PATH: ${{ github.workspace }}/combined
+  DEPLOY_PATH: ${{ github.workspace }}/dist
+  CACHE_PATH: ${{ github.workspace }}/.cache
+  BUILT_SITE_PATH: ${{ github.workspace }}/built-site
 
 jobs:
   build:
@@ -14,19 +19,80 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          path: source
+
+      - name: Persist Eleventy .cache
+        uses: actions/cache@v4
+        with:
+          path: ./.cache
+          key: ${{ runner.os }}-eleventy-fetch-cache
+
+      - name: Clone template and merge repos
+        run: |
+          # Create directories
+          mkdir -p "${{ env.COMBINED_PATH }}"
+          mkdir -p "${{ env.DEPLOY_PATH }}"
+          mkdir -p "${{ env.CACHE_PATH }}"
+
+          # Clone the template repo
+          git clone "${{ env.TEMPLATE_REPO }}" "${{ env.TEMPLATE_PATH }}"
+
+          # Copy template files to combined dir
+          rsync \
+            --recursive \
+            --no-perms \
+            --delete \
+            --exclude=".git" \
+            --exclude="node_modules" \
+            --exclude="*.md" \
+            "${{ env.TEMPLATE_PATH }}/" "${{ env.COMBINED_PATH }}/"
+
+          # Overlay our repo files into combined dir
+          rsync \
+            --recursive \
+            --no-perms \
+            --exclude=".git" \
+            --exclude="*.nix" \
+            --exclude="README.md" \
+            --exclude=".forgejo" \
+            "${{ github.workspace }}/source/" "${{ env.COMBINED_PATH }}/src/"
+
+          rsync \
+            --recursive \
+            "${{ env.CACHE_PATH }}" "${{ env.COMBINED_PATH }}/"
 
       - name: Update site.json with secrets
         run: |
-          sed -i 's/"formspark_id": "[^"]*"/"formspark_id": "${{ secrets.FORMSPARK_ID }}"/g' _data/site.json
-          sed -i 's/"botpoison_public_key": "[^"]*"/"botpoison_public_key": "${{ secrets.BOTPOISON_PUBLIC_KEY }}"/g' _data/site.json
+          sed -i \
+            's/"formspark_id": null/"formspark_id": "${{ secrets.FORMSPARK_ID }}"/g' \
+            "${{ env.COMBINED_PATH }}/src/_data/site.json"
+          sed -i \
+            's/"botpoison_public_key": null/"botpoison_public_key": "${{ secrets.BOTPOISON_PUBLIC_KEY }}"/g' \
+            "${{ env.COMBINED_PATH }}/src/_data/site.json"
 
       - name: Build
         id: build
         run: |
-          DEPLOY_PATH="$GITHUB_WORKSPACE/dist"
-          mkdir -p "$DEPLOY_PATH"
-          nix-fast-build --skip-cached --flake ".#packages.x86_64-linux.default" --no-nom
-          cp -r result-/* "$DEPLOY_PATH"/
+          cd ${{ env.COMBINED_PATH }}
+          nix-fast-build \
+            --skip-cached \
+            --flake ".#packages.x86_64-linux.site" \
+            --no-nom
+
+      - name: Copy .cache out of result
+        run: |
+          rsync -a \
+            "${{ env.COMBINED_PATH }}/result-/.cache/" \
+            "${{ env.CACHE_PATH }}"
+
+      - name: Copy built site out of result
+        run: |
+          mkdir -p "${{ env.BUILT_SITE_PATH }}"
+          rsync -a \
+            --exclude=".cache" \
+            "${{ env.COMBINED_PATH }}/result-/" \
+            "${{ env.BUILT_SITE_PATH }}/"
 
       - name: Deploy to Neocities
         uses: bcomnes/deploy-to-neocities@v3
@@ -35,13 +101,13 @@ jobs:
           cleanup: true
           neocities_supporter: true
           preview_before_deploy: false
-          dist_dir: dist
+          dist_dir: "${{ env.BUILT_SITE_PATH }}"
 
       - name: Deploy to Bunny
         uses: R-J-dev/bunny-deploy@v2.0.6
         with:
           access-key: ${{ secrets.BUNNY_ACCESS_KEY }}
-          directory-to-upload: "./dist"
+          directory-to-upload: "${{ env.BUILT_SITE_PATH }}"
           storage-endpoint: "https://storage.bunnycdn.com"
           storage-zone-name: "chobble-tradesperson-example"
           storage-zone-password: ${{ secrets.BUNNY_STORAGE_ZONE_PASSWORD }}
@@ -50,3 +116,9 @@ jobs:
           enable-purge-pull-zone: true
           pull-zone-id: "3573523"
           replication-timeout: "15000"
+
+      - name: Delete temporary directories
+        run: |
+          rm -rf "${{ env.TEMPLATE_PATH }}"
+          rm -rf "${{ env.COMBINED_PATH }}"
+          rm -rf "${{ env.BUILT_SITE_PATH }}"
