@@ -117,6 +117,12 @@ jobs:
             "$RESULT_SRC" \
             "${{ env.BUILT_SITE_PATH }}/"
 
+      - uses: actions/cache/save@v4
+        name: Save cache
+        with:
+          path: "${{ github.workspace }}/.cache"
+          key: eleventy-img-cache
+
       - name: Deploy to Neocities
         uses: bcomnes/deploy-to-neocities@v3
         with:
@@ -139,9 +145,3 @@ jobs:
           enable-purge-pull-zone: true
           pull-zone-id: "3573523"
           replication-timeout: "15000"
-
-      - uses: actions/cache/save@v4
-        name: Save cache
-        with:
-          path: "${{ github.workspace }}/.cache"
-          key: eleventy-img-cache
