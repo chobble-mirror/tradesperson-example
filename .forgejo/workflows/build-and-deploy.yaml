@@ -118,6 +118,7 @@ jobs:
             "${{ env.BUILT_SITE_PATH }}/"
 
       - uses: actions/cache/save@v4
+        id: cache
         name: Save cache
         with:
           path: "${{ github.workspace }}/.cache"
