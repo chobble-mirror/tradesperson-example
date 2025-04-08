@@ -9,9 +9,9 @@ env:
   TEMPLATE_REPO: "https://git.chobble.com/chobble/chobble-template.git"
   TEMPLATE_PATH: ${{ github.workspace }}/template
   COMBINED_PATH: ${{ github.workspace }}/combined
-  DEPLOY_PATH: ${{ github.workspace }}/dist
-  CACHE_PATH: ${{ github.workspace }}/.cache
+  RESULT_PATH: ${{ github.workspace }}/combined/result-/
   BUILT_SITE_PATH: ${{ github.workspace }}/built-site
+  CACHE_PATH: ${{ github.workspace }}/.cache
 
 jobs:
   build:
@@ -26,7 +26,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ./.cache
-          key: ${{ runner.os }}-eleventy-fetch-cache
+          key: eleventy-img-cache
 
       - name: Clone template and merge repos
         run: |
@@ -82,16 +82,40 @@ jobs:
 
       - name: Copy .cache out of result
         run: |
+          CACHE_SRC="${{ env.RESULT_PATH }}/.cache"
+          
+          # Check that source exists and is not empty
+          if [ ! -d "$CACHE_SRC" ] || [ -z "$(ls -A "$CACHE_SRC")" ]; then
+            echo "Error: .cache directory does not exist or is empty"
+            echo "Path: $CACHE_SRC"
+            exit 1
+          fi
+
           rsync -a \
-            "${{ env.COMBINED_PATH }}/result-/.cache/" \
+            "$CACHE_SRC/" \
             "${{ env.CACHE_PATH }}"
 
       - name: Copy built site out of result
         run: |
+          RESULT_SRC="${{ env.RESULT_PATH }}"
+          
+          # Check that source exists and has content (excluding .cache)
+          if [ ! -d "$RESULT_SRC" ]; then
+            echo "Error: Result directory does not exist"
+            echo "Path: $RESULT_SRC"
+            exit 1
+          fi
+          
+          if [ -z "$(ls -A "$RESULT_SRC" | grep -v '.cache')" ]; then
+            echo "Error: Result directory is empty (excluding .cache)"
+            echo "Path: $RESULT_SRC"
+            exit 1
+          fi
+
           mkdir -p "${{ env.BUILT_SITE_PATH }}"
           rsync -a \
             --exclude=".cache" \
-            "${{ env.COMBINED_PATH }}/result-/" \
+            "$RESULT_SRC" \
             "${{ env.BUILT_SITE_PATH }}/"
 
       - name: Deploy to Neocities
