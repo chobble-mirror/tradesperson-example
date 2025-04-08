@@ -121,12 +121,11 @@ jobs:
 
       - name: Copy .image-cache out of result
         run: |
-          echo $(ls)
           rsync -a \
             --delete \
             --include="*.jpeg" \
             --include="*.webp" \
-            result-/.image-cache \
+            combined/result-/.image-cache \
             .image-cache
 
       - name: Save cache
@@ -138,9 +137,10 @@ jobs:
       - name: Copy built site out of result
         run: |
           mkdir built-site
-          rsync -a \
+          rsync \
+            --recursive \
             --exclude=".image-cache" \
-            result-/ \
+            combined/result-/ \
             built-site/
 
       - name: Deploy to Neocities
