@@ -27,8 +27,6 @@ jobs:
         with:
           path: "${{ github.workspace }}/.cache"
           key: eleventy-img-cache
-          restore-keys: |
-            eleventy-img-cache
 
       - name: Clone template and merge repos
         run: |
@@ -141,3 +139,9 @@ jobs:
           enable-purge-pull-zone: true
           pull-zone-id: "3573523"
           replication-timeout: "15000"
+
+      - uses: actions/cache/save@v4
+        name: Save cache
+        with:
+          path: "${{ github.workspace }}/.cache"
+          key: eleventy-img-cache
