@@ -22,6 +22,11 @@ jobs:
           repository: chobble/chobble-template
           ref: main
           path: template
+          sparse-checkout: |
+            flake.nix
+            flake.lock
+            bin
+            src
 
       - name: Get Eleventy .cache
         uses: actions/cache/restore@v4
@@ -66,8 +71,6 @@ jobs:
             --recursive \
             --no-perms \
             --chmod=ugo=rwX \
-            --include="*.jpeg" \
-            --include="*.webp" \
             source/.image-cache \
             combined/
 
