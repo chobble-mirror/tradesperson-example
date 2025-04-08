@@ -101,17 +101,6 @@ jobs:
             's/"botpoison_public_key": null/"botpoison_public_key": "${{ secrets.BOTPOISON_PUBLIC_KEY }}"/g' \
             "combined/src/_data/site.json"
 
-      - name: Fix permissions
-        run: |
-          chmod 755 combined/.image-cache
-          find combined/.image-cache -type d -exec chmod 755 {} \;
-          find combined/.image-cache -type f -exec chmod 644 {} \;
-
-      - name: List build dir
-        run: |
-          echo $(ls -al combined)
-          echo $(ls -al combined/.image-cache)
-
       - name: Build with Nix
         run: |
           cd combined
@@ -175,4 +164,6 @@ jobs:
 
       - name: Clean up
         run: |
+          find . -type d -exec chmod 755 {} \;
+          find . -type f -exec chmod 644 {} \;
           rm -rf result .image-cache built-site
