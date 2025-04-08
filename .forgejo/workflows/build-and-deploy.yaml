@@ -62,7 +62,7 @@ jobs:
             --exclude="README.md" \
             --exclude=".forgejo" \
             --exclude=".image-cache" \
-            source \
+            source/ \
             combined/src/
 
       - name: Copy .image-cache folder in separately
@@ -87,8 +87,8 @@ jobs:
             --chmod=ugo=rwX \
             --include="*.jpeg" \
             --include="*.webp" \
-            .image-cache \
-            combined/
+            .image-cache/ \
+            combined/.image-cache/
 
       - name: Update site.json with secrets
         run: |
@@ -101,8 +101,9 @@ jobs:
 
       - name: Fix permissions
         run: |
-          find combined -type d -exec chmod 755 {} \;
-          find combined -type f -exec chmod 644 {} \;
+          chmod 755 combined/.image-cache
+          find combined/.image-cache -type d -exec chmod 755 {} \;
+          find combined/.image-cache -type f -exec chmod 644 {} \;
 
       - name: List build dir
         run: |
