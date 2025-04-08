@@ -47,6 +47,7 @@ jobs:
           rsync \
             --recursive \
             --no-perms \
+            --chmod=ugo=rwX \
             --delete \
             --exclude=".git" \
             --exclude="node_modules" \
@@ -58,6 +59,7 @@ jobs:
           rsync \
             --recursive \
             --no-perms \
+            --chmod=ugo=rwX \
             --exclude=".git" \
             --exclude="*.nix" \
             --exclude="README.md" \
@@ -68,6 +70,8 @@ jobs:
         run: |
           rsync \
             --recursive \
+            --no-perms \
+            --chmod=ugo=rwX \
             "${{ env.CACHE_PATH }}" "${{ env.COMBINED_PATH }}/"
 
       - name: Update site.json with secrets
@@ -96,11 +100,6 @@ jobs:
             --include="*.webp" \
             "${{ env.RESULT_PATH }}/.image-cache" \
             "${{ env.CACHE_PATH }}"
-
-      - name: Fix cache permissions
-        run: |
-          find "${{ env.CACHE_PATH }}" -type d -exec chmod 755 {} \;
-          find "${{ env.CACHE_PATH }}" -type f -exec chmod 644 {} \;
 
       - name: Save cache
         uses: actions/cache/save@v4
