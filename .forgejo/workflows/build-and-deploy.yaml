@@ -27,6 +27,8 @@ jobs:
         with:
           path: "${{ github.workspace }}/.cache"
           key: eleventy-img-cache
+          restore-keys: |
+            eleventy-img-cache
 
       - name: Clone template and merge repos
         run: |
