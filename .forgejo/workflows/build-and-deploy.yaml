@@ -32,7 +32,6 @@ jobs:
         run: |
           # Create directories
           mkdir -p "${{ env.COMBINED_PATH }}"
-          mkdir -p "${{ env.DEPLOY_PATH }}"
           mkdir -p "${{ env.CACHE_PATH }}"
 
           # Clone the template repo
@@ -83,7 +82,7 @@ jobs:
       - name: Copy .cache out of result
         run: |
           CACHE_SRC="${{ env.RESULT_PATH }}/.cache"
-          
+
           # Check that source exists and is not empty
           if [ ! -d "$CACHE_SRC" ] || [ -z "$(ls -A "$CACHE_SRC")" ]; then
             echo "Error: .cache directory does not exist or is empty"
@@ -98,14 +97,14 @@ jobs:
       - name: Copy built site out of result
         run: |
           RESULT_SRC="${{ env.RESULT_PATH }}"
-          
+
           # Check that source exists and has content (excluding .cache)
           if [ ! -d "$RESULT_SRC" ]; then
             echo "Error: Result directory does not exist"
             echo "Path: $RESULT_SRC"
             exit 1
           fi
-          
+
           if [ -z "$(ls -A "$RESULT_SRC" | grep -v '.cache')" ]; then
             echo "Error: Result directory is empty (excluding .cache)"
             echo "Path: $RESULT_SRC"
