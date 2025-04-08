@@ -139,6 +139,7 @@ jobs:
           mkdir built-site
           rsync \
             --recursive \
+            --verbose \
             --exclude=".image-cache" \
             combined/result-/ \
             built-site/
@@ -150,7 +151,7 @@ jobs:
           cleanup: true
           neocities_supporter: true
           preview_before_deploy: false
-          dist_dir: "built-site"
+          dist_dir: ./built-site
 
       - name: Deploy to Bunny
         uses: R-J-dev/bunny-deploy@v2.0.6
