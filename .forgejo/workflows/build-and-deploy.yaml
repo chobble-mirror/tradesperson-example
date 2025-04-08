@@ -34,6 +34,7 @@ jobs:
         with:
           path: ${{ github.workspace }}/.cache
           key: eleventy-img-cache
+          restore-keys: eleventy-img-cache
 
       - name: Make combined dir
         run: mkdir -p "${{ env.COMBINED_PATH }}"
