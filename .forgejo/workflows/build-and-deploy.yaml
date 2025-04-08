@@ -83,6 +83,11 @@ jobs:
             's/"botpoison_public_key": null/"botpoison_public_key": "${{ secrets.BOTPOISON_PUBLIC_KEY }}"/g' \
             "${{ env.COMBINED_PATH }}/src/_data/site.json"
 
+      - name: Fix permissions
+        run: |
+          find "${{ env.COMBINED_PATH }}" -type d -exec chmod 755 {} \;
+          find "${{ env.COMBINED_PATH }}" -type f -exec chmod 644 {} \;
+
       - name: Build with Nix
         id: build
         run: |
