@@ -25,7 +25,7 @@ jobs:
       - name: Persist Eleventy .cache
         uses: actions/cache@v4
         with:
-          path: ./.cache
+          path: "${{ github.workspace }}/.cache"
           key: eleventy-img-cache
 
       - name: Clone template and merge repos
