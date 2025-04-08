@@ -108,11 +108,6 @@ jobs:
           find "${{ env.CACHE_PATH }}" -type d -exec chmod 755 {} \;
           find "${{ env.CACHE_PATH }}" -type f -exec chmod 644 {} \;
 
-      - name: Fix built site path permissions
-        run: |
-          find "${{ env.BUILT_SITE_PATH }}" -type d -exec chmod 755 {} \;
-          find "${{ env.BUILT_SITE_PATH }}" -type f -exec chmod 644 {} \;
-
       - name: Save cache
         uses: actions/cache/save@v4
         with:
@@ -141,6 +136,11 @@ jobs:
             --exclude=".cache" \
             "$RESULT_SRC" \
             "${{ env.BUILT_SITE_PATH }}/"
+
+      - name: Fix built site path permissions
+        run: |
+          find "${{ env.BUILT_SITE_PATH }}" -type d -exec chmod 755 {} \;
+          find "${{ env.BUILT_SITE_PATH }}" -type f -exec chmod 644 {} \;
 
       - name: Deploy to Neocities
         uses: bcomnes/deploy-to-neocities@v3
