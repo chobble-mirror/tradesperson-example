@@ -111,7 +111,7 @@ jobs:
       - name: Save cache
         uses: actions/cache/save@v4
         with:
-          path: .cache
+          path: ${{ github.workspace }}/.cache
           key: eleventy-img-cache
 
       - name: Copy built site out of result
