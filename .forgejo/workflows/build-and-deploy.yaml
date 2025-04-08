@@ -11,6 +11,7 @@ env:
   COMBINED_PATH: ${{ github.workspace }}/combined
   RESULT_PATH: ${{ github.workspace }}/combined/result-/
   BUILT_SITE_PATH: ${{ github.workspace }}/built-site
+  CACHE_PATH: ${{ github.workspace }}/.image-cache
 
 jobs:
   build:
@@ -31,12 +32,15 @@ jobs:
       - name: Get Eleventy .cache
         uses: actions/cache/restore@v4
         with:
-          path: .cache
+          path: .image-cache
           key: eleventy-img-cache
           fail-on-cache-miss: false
 
       - name: Make combined dir
         run: mkdir -p "${{ env.COMBINED_PATH }}"
+
+      - name: Make cache dir
+        run: mkdir -p "${{ env.CACHE_PATH }}"
 
       - name: Copy template files to combined dir
         run: |
@@ -87,6 +91,9 @@ jobs:
       - name: Copy .image-cache out of result
         run: |
           rsync -a \
+            --delete \
+            --include="*.jpeg" \
+            --include="*.webp" \
             "${{ env.RESULT_PATH }}/.image-cache" \
             "${{ env.CACHE_PATH }}"
 
@@ -98,30 +105,15 @@ jobs:
       - name: Save cache
         uses: actions/cache/save@v4
         with:
-          path: ${{ github.workspace }}/.cache
+          path: .image-cache
           key: eleventy-img-cache
 
       - name: Copy built site out of result
         run: |
-          RESULT_SRC="${{ env.RESULT_PATH }}"
-
-          # Check that source exists and has content (excluding .cache)
-          if [ ! -d "$RESULT_SRC" ]; then
-            echo "Error: Result directory does not exist"
-            echo "Path: $RESULT_SRC"
-            exit 1
-          fi
-
-          if [ -z "$(ls -A "$RESULT_SRC" | grep -v '.cache')" ]; then
-            echo "Error: Result directory is empty (excluding .cache)"
-            echo "Path: $RESULT_SRC"
-            exit 1
-          fi
-
           mkdir -p "${{ env.BUILT_SITE_PATH }}"
           rsync -a \
-            --exclude=".cache" \
-            "$RESULT_SRC" \
+            --exclude=".image-cache" \
+            "${{ env.RESULT_PATH }}" \
             "${{ env.BUILT_SITE_PATH }}/"
 
       - name: Fix built site path permissions
