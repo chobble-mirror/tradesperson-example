@@ -29,13 +29,12 @@ jobs:
           ref: main
           path: template
 
-      - name: Persist Eleventy .cache
-        uses: actions/cache@v4
+      - name: Get Eleventy .cache
+        uses: actions/cache/restore@v4
         with:
           path: ${{ github.workspace }}/.cache
           key: eleventy-img-cache
-          restore-keys: |
-            eleventy-img-cache
+          fail-on-cache-miss: false
 
       - name: Make combined dir
         run: mkdir -p "${{ env.COMBINED_PATH }}"
