@@ -69,6 +69,7 @@ jobs:
         run: |
           rsync \
             --recursive \
+            --verbose \
             --no-perms \
             --chmod=ugo=rwX \
             source/.image-cache \
@@ -81,6 +82,7 @@ jobs:
         run: |
           rsync \
             --recursive \
+            --verbose \
             --no-perms \
             --chmod=ugo=rwX \
             --include="*.jpeg" \
