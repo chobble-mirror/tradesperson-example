@@ -25,7 +25,7 @@ jobs:
       - name: Persist Eleventy .cache
         uses: actions/cache@v4
         with:
-          path: "${{ github.workspace }}/.cache"
+          path: ".cache"
           key: eleventy-img-cache
 
       - name: Clone template and merge repos
@@ -116,6 +116,12 @@ jobs:
             --exclude=".cache" \
             "$RESULT_SRC" \
             "${{ env.BUILT_SITE_PATH }}/"
+
+      - name: Save cache
+        uses: actions/cache/save@v4
+        with:
+          path: ".cache"
+          key: eleventy-img-cache
 
       - name: Deploy to Neocities
         uses: bcomnes/deploy-to-neocities@v3
