@@ -111,7 +111,6 @@ jobs:
           echo $(ls -al combined/.image-cache)
 
       - name: Build with Nix
-        id: build
         run: |
           cd combined
           nix-fast-build \
@@ -119,16 +118,21 @@ jobs:
             --flake ".#packages.x86_64-linux.site" \
             --no-nom
 
+      - name: Delete all but result
+        run: |
+          mv combined/result- result
+          rm -rf combined source template
+
       - name: Copy .image-cache out of result
         run: |
           rsync -a \
             --delete \
             --include="*.jpeg" \
             --include="*.webp" \
-            combined/result-/.image-cache \
+            result/.image-cache \
             .image-cache
 
-      - name: Save cache
+      - name: Save .image-cache to Forgejo cache
         uses: actions/cache/save@v4
         with:
           path: .image-cache
@@ -141,7 +145,7 @@ jobs:
             --recursive \
             --verbose \
             --exclude=".image-cache" \
-            combined/result-/ \
+            result/_site/ \
             built-site/
 
       - name: Deploy to Neocities
@@ -167,8 +171,6 @@ jobs:
           pull-zone-id: "3573523"
           replication-timeout: "15000"
 
-      - name: Remove result and fix permissions
+      - name: Clean up
         run: |
-          rm -rf result-
-          find . -type d -exec chmod 755 {} \;
-          find . -type f -exec chmod 644 {} \;
+          rm -rf result .image-cache built-site
