@@ -72,7 +72,9 @@ jobs:
             --verbose \
             --no-perms \
             --chmod=ugo=rwX \
-            source/.image-cache \
+            --include="*.jpeg" \
+            --include="*.webp" \
+            source/.image-cache/ \
             combined/
 
       - name: Make Forgejo cache dir
@@ -129,8 +131,8 @@ jobs:
             --delete \
             --include="*.jpeg" \
             --include="*.webp" \
-            result/.image-cache \
-            .image-cache
+            result/.image-cache/ \
+            .image-cache/
 
       - name: Save .image-cache to Forgejo cache
         uses: actions/cache/save@v4
