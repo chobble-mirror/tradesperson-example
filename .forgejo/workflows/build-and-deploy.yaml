@@ -58,20 +58,33 @@ jobs:
         run: |
           rsync \
             --recursive \
-            --no-perms \
-            --chmod=ugo=rwX \
             --exclude=".git" \
             --exclude="*.nix" \
             --exclude="README.md" \
             --exclude=".forgejo" \
-            "${{ github.workspace }}/source/" "${{ env.COMBINED_PATH }}/src/"
+            --exclude=".image-cache" \
+            "${{ github.workspace }}/source/" \
+            "${{ env.COMBINED_PATH }}/src/"
 
-      - name: Copy cache into combined dir
+      - name: Copy .image-cache folder in separately
         run: |
           rsync \
             --recursive \
             --no-perms \
             --chmod=ugo=rwX \
+            --include="*.jpeg" \
+            --include="*.webp" \
+            "${{ github.workspace }}/source/.image-cache" \
+            "${{ env.COMBINED_PATH }}/src/"
+
+      - name: Copy Forgejo cache into combined dir
+        run: |
+          rsync \
+            --recursive \
+            --no-perms \
+            --chmod=ugo=rwX \
+            --include="*.jpeg" \
+            --include="*.webp" \
             "${{ env.CACHE_PATH }}" "${{ env.COMBINED_PATH }}/"
 
       - name: Update site.json with secrets
