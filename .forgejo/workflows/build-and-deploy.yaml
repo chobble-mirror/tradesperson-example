@@ -32,7 +32,7 @@ jobs:
       - name: Get Eleventy .cache
         uses: actions/cache/restore@v4
         with:
-          path: ${{ github.workspace }}/.cache
+          path: .cache
           key: eleventy-img-cache
           fail-on-cache-miss: false
 
@@ -111,7 +111,7 @@ jobs:
       - name: Save cache
         uses: actions/cache/save@v4
         with:
-          path: ${{ github.workspace }}/.cache
+          path: .cache
           key: eleventy-img-cache
 
       - name: Copy built site out of result
