@@ -39,9 +39,6 @@ jobs:
       - name: Make combined dir
         run: mkdir -p "${{ env.COMBINED_PATH }}"
 
-      - name: Make cache dir
-        run: mkdir -p "${{ env.CACHE_PATH }}"
-
       - name: Copy template files to combined dir
         run: |
           rsync \
@@ -75,7 +72,10 @@ jobs:
             --include="*.jpeg" \
             --include="*.webp" \
             "${{ github.workspace }}/source/.image-cache" \
-            "${{ env.COMBINED_PATH }}/src/"
+            "${{ env.COMBINED_PATH }}/"
+
+      - name: Make Forgejo cache dir
+        run: mkdir -p "${{ env.CACHE_PATH }}"
 
       - name: Copy Forgejo cache into combined dir
         run: |
