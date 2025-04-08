@@ -90,7 +90,8 @@ jobs:
 
       - name: List build dir
         run: |
-          nix-shell -p exa --run "exa --tree -al ${{ env.COMBINED_PATH }}"
+          echo $(ls -al "${{ env.COMBINED_PATH }})"
+          echo $(ls -al "${{ env.COMBINED_PATH }})/.image-cache"
 
       - name: Build with Nix
         id: build
