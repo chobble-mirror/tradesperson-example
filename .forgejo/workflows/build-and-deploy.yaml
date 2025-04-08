@@ -121,6 +121,7 @@ jobs:
 
       - name: Copy .image-cache out of result
         run: |
+          echo $(ls)
           rsync -a \
             --delete \
             --include="*.jpeg" \
