@@ -26,6 +26,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: chobble/chobble-template
+          ref: main
           path: template
 
       - name: Persist Eleventy .cache
