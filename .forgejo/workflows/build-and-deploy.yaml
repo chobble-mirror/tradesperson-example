@@ -25,7 +25,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          repository: "https://git.chobble.com/chobble/chobble-template.git"
+          repository: "chobble-mirror/chobble-template"
           path: template
 
       - name: Persist Eleventy .cache
@@ -34,16 +34,14 @@ jobs:
           path: ".cache"
           key: eleventy-img-cache
 
-      - name: Clone template and merge repos
+      - name: Make combined dir
+        run: mkdir -p "${{ env.COMBINED_PATH }}"
+
+      - name: Make cache dir
+        run: mkdir -p "${{ env.CACHE_PATH }}"
+
+      - name: Copy template files to combined dir
         run: |
-          # Create directories
-          mkdir -p "${{ env.COMBINED_PATH }}"
-          mkdir -p "${{ env.CACHE_PATH }}"
-
-          # Clone the template repo
-          git clone "${{ env.TEMPLATE_REPO }}" "${{ env.TEMPLATE_PATH }}"
-
-          # Copy template files to combined dir
           rsync \
             --recursive \
             --no-perms \
@@ -53,7 +51,8 @@ jobs:
             --exclude="*.md" \
             "${{ env.TEMPLATE_PATH }}/" "${{ env.COMBINED_PATH }}/"
 
-          # Overlay our repo files into combined dir
+      - name: Overlay our repo files into combined dir
+        run: |
           rsync \
             --recursive \
             --no-perms \
@@ -63,6 +62,8 @@ jobs:
             --exclude=".forgejo" \
             "${{ github.workspace }}/source/" "${{ env.COMBINED_PATH }}/src/"
 
+      - name: Copy cache into combined dir
+        run: |
           rsync \
             --recursive \
             "${{ env.CACHE_PATH }}" "${{ env.COMBINED_PATH }}/"
@@ -76,7 +77,7 @@ jobs:
             's/"botpoison_public_key": null/"botpoison_public_key": "${{ secrets.BOTPOISON_PUBLIC_KEY }}"/g' \
             "${{ env.COMBINED_PATH }}/src/_data/site.json"
 
-      - name: Build
+      - name: Build with Nix
         id: build
         run: |
           cd ${{ env.COMBINED_PATH }}
@@ -100,6 +101,12 @@ jobs:
             "$CACHE_SRC/" \
             "${{ env.CACHE_PATH }}"
 
+      - name: Save cache
+        uses: actions/cache/save@v4
+        with:
+          path: ".cache"
+          key: eleventy-img-cache
+
       - name: Copy built site out of result
         run: |
           RESULT_SRC="${{ env.RESULT_PATH }}"
@@ -122,12 +129,6 @@ jobs:
             --exclude=".cache" \
             "$RESULT_SRC" \
             "${{ env.BUILT_SITE_PATH }}/"
-
-      - name: Save cache
-        uses: actions/cache/save@v4
-        with:
-          path: ".cache"
-          key: eleventy-img-cache
 
       - name: Deploy to Neocities
         uses: bcomnes/deploy-to-neocities@v3
