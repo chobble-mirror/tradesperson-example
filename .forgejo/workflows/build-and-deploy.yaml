@@ -63,21 +63,23 @@ jobs:
         run: |
           mkdir combined/.image-cache
           rsync \
+            --recursive \
             --verbose \
             --no-perms \
             --chmod=ugo=rwX \
-            source/.image-cache/ \
-            combined/.image-cache/
+            source/.image-cache \
+            combined/
 
       - name: Copy Forgejo cache into combined dir
         run: |
           mkdir -p .image-cache
           rsync \
+            --recursive \
             --verbose \
             --no-perms \
             --chmod=ugo=rwX \
-            .image-cache/ \
-            combined/.image-cache/
+            .image-cache \
+            combined/
 
       - name: Update site.json with secrets
         run: |
