@@ -46,8 +46,6 @@ jobs:
             --recursive \
             --verbose \
             --delete \
-            --no-perms \
-            --chmod=ugo=rwX \
             --exclude=".git" \
             --exclude="*.md" \
             --exclude="images" \
@@ -59,8 +57,6 @@ jobs:
           rsync \
             --recursive \
             --verbose \
-            --no-perms \
-            --chmod=ugo=rwX \
             --exclude=".git" \
             --exclude=".image-cache" \
             --exclude="bin/build" \
@@ -74,15 +70,8 @@ jobs:
           rsync \
             --recursive \
             --verbose \
-            --no-perms \
-            --chmod=ugo=rwX \
             source/.image-cache/ \
             combined/.image-cache/
-
-      - name: Fix permissions
-        run: |
-          chmod -R a+rwX combined
-          echo $(ls -lah combined)
 
       # - name: Copy Forgejo cache into combined dir
       #   run: |
