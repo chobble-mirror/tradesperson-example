@@ -34,15 +34,14 @@ jobs:
           path: ${{ github.workspace }}/.image-cache
           key: eleventy-img-cache
 
-      - name: Make combined dir
-        run: mkdir combined
-
       - name: Copy template files to combined dir
         run: |
+          mkdir combined
           rsync \
             --recursive \
             --verbose \
             --delete \
+            --exclude=".git" \
             template/ \
             combined/
 
@@ -51,8 +50,9 @@ jobs:
           rsync \
             --recursive \
             --verbose \
-            --exclude=".git" \
+            --exclude=".*" \
             --exclude="*.nix" \
+            --exclude="bin" \
             --exclude="README.md" \
             --exclude=".forgejo" \
             --exclude=".image-cache" \
@@ -61,28 +61,17 @@ jobs:
 
       - name: Copy .image-cache folder in separately
         run: |
+          mkdir combined/.image-cache
           rsync \
-            --recursive \
             --verbose \
-            --no-perms \
-            --chmod=ugo=rwX \
-            --include="*.jpeg" \
-            --include="*.webp" \
             source/.image-cache \
             combined/
 
-      - name: Make Forgejo cache dir
-        run: mkdir -p .image-cache
-
       - name: Copy Forgejo cache into combined dir
         run: |
+          mkdir -p .image-cache
           rsync \
-            --recursive \
             --verbose \
-            --no-perms \
-            --chmod=ugo=rwX \
-            --include="*.jpeg" \
-            --include="*.webp" \
             .image-cache/ \
             combined/.image-cache/
 
@@ -110,10 +99,8 @@ jobs:
 
       - name: Copy .image-cache out of result
         run: |
-          rsync -a \
+          rsync \
             --delete \
-            --include="*.jpeg" \
-            --include="*.webp" \
             result/.image-cache/ \
             .image-cache/
 
@@ -123,18 +110,6 @@ jobs:
       #     path: ${{ github.workspace }}/.image-cache
       #     key: eleventy-img-cache
 
-      - name: Copy built site out of result
-        run: |
-          mkdir built-site
-          rsync \
-            --recursive \
-            --verbose \
-            --no-perms \
-            --chmod=ugo=rwX \
-            --exclude=".image-cache" \
-            result/_site/ \
-            built-site/
-
       - name: Deploy to Neocities
         uses: bcomnes/deploy-to-neocities@v3
         with:
@@ -142,13 +117,13 @@ jobs:
           cleanup: true
           neocities_supporter: true
           preview_before_deploy: false
-          dist_dir: ./built-site
+          dist_dir: ./result/_site
 
       - name: Deploy to Bunny
         uses: R-J-dev/bunny-deploy@v2.0.6
         with:
           access-key: ${{ secrets.BUNNY_ACCESS_KEY }}
-          directory-to-upload: built-site
+          directory-to-upload: result/_site
           storage-endpoint: "https://storage.bunnycdn.com"
           storage-zone-name: "chobble-tradesperson-example"
           storage-zone-password: ${{ secrets.BUNNY_STORAGE_ZONE_PASSWORD }}
@@ -162,4 +137,4 @@ jobs:
         run: |
           find . -type d -exec chmod 755 {} \;
           find . -type f -exec chmod 644 {} \;
-          rm -rf result .image-cache built-site
+          rm -rf result .image-cache
