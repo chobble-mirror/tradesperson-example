@@ -100,11 +100,7 @@ jobs:
             --skip-cached \
             --flake ".#packages.x86_64-linux.site" \
             --no-nom
-
-      - name: Delete all but result
-        run: |
           mv combined/result- result
-          rm -rf combined source template
 
       # - name: Copy .image-cache out of result
       #   run: |
@@ -147,4 +143,4 @@ jobs:
         run: |
           find . -type d -exec chmod 755 {} \;
           find . -type f -exec chmod 644 {} \;
-          rm -rf result .image-cache
+          rm -rf combined source template result .image-cache
