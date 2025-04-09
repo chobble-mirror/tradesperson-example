@@ -65,14 +65,14 @@ jobs:
 
       - name: Copy .image-cache folder in separately
         run: |
-          mkdir combined/.image-cache
+          mkdir -p combined/.image-cache
           rsync \
             --recursive \
             --verbose \
             --no-perms \
             --chmod=ugo=rwX \
-            source/.image-cache \
-            combined/
+            source/.image-cache/ \
+            combined/.image-cache/
 
       - name: Fix .image-cache permissions
         run: |
@@ -87,8 +87,8 @@ jobs:
       #       --verbose \
       #       --no-perms \
       #       --chmod=ugo=rwX \
-      #       .image-cache \
-      #       combined/
+      #       .image-cache/ \
+      #       combined/.image-cache/
 
       - name: Update site.json with secrets
         run: |
