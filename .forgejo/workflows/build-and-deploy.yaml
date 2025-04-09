@@ -103,6 +103,10 @@ jobs:
           mv combined/result- result
           rm -rf combined source template
 
+      - name: List remaining files
+        run: |
+          echo $(find | sort)
+
       # - name: Copy .image-cache out of result
       #   run: |
       #     rsync \
