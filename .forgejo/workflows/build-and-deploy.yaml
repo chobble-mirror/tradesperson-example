@@ -69,13 +69,15 @@ jobs:
           rsync \
             --recursive \
             --verbose \
+            --no-perms \
+            --chmod=ugo=rwX \
             source/.image-cache \
             combined/
 
       - name: Fix .image-cache permissions
         run: |
-          find combined/.image-cache -type d -exec chmod 755 {} \;
-          find combined/.image-cache -type f -exec chmod 644 {} \;
+          find combined/.image-cache -type d -exec chmod 777 {} \;
+          find combined/.image-cache -type f -exec chmod 666 {} \;
 
       # - name: Copy Forgejo cache into combined dir
       #   run: |
