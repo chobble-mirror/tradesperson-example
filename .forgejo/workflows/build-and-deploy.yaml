@@ -45,6 +45,8 @@ jobs:
             --recursive \
             --verbose \
             --delete \
+            --no-perms \
+            --chmod=ugo=rwX \
             --exclude=".git" \
             --exclude="*.md" \
             --exclude="images" \
@@ -56,6 +58,8 @@ jobs:
           rsync \
             --recursive \
             --verbose \
+            --no-perms \
+            --chmod=ugo=rwX \
             --exclude=".git" \
             --exclude=".image-cache" \
             --exclude="bin/build" \
