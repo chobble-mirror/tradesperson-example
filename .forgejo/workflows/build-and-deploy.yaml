@@ -81,8 +81,7 @@ jobs:
 
       - name: Fix permissions
         run: |
-          find combined -type d -exec chmod 777 {} \;
-          find combined -type f -exec chmod 666 {} \;
+          chmod -R a+rwX combined
           echo $(ls -lah combined)
 
       # - name: Copy Forgejo cache into combined dir
