@@ -103,12 +103,13 @@ jobs:
           mv combined/result- result
           rm -rf combined source template
 
-      - name: Copy .image-cache out of result
-        run: |
-          rsync \
-            --delete \
-            result/.image-cache/ \
-            .image-cache/
+      # - name: Copy .image-cache out of result
+      #   run: |
+      #     rsync \
+      #       --recursive \
+      #       --delete \
+      #       result/.image-cache/ \
+      #       .image-cache/
 
       # - name: Save .image-cache to Forgejo cache
       #   uses: actions/cache/save@v4
