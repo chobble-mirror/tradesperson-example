@@ -67,7 +67,7 @@ jobs:
             --no-perms \
             --chmod=ugo=rwX \
             source/.image-cache/ \
-            combined/
+            combined/.image-cache/
 
       - name: Copy Forgejo cache into combined dir
         run: |
