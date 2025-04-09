@@ -74,6 +74,10 @@ jobs:
             source/.image-cache \
             combined/
 
+      - name: Fix .image-cache permissions
+        run: |
+          chmod 755 combined/.image-cache
+
       # - name: Copy Forgejo cache into combined dir
       #   run: |
       #     mkdir -p .image-cache
