@@ -69,8 +69,6 @@ jobs:
           rsync \
             --recursive \
             --verbose \
-            --no-perms \
-            --chmod=ugo=rwX \
             source/.image-cache \
             combined/
 
