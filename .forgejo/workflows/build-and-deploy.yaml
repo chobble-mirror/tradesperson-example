@@ -28,11 +28,11 @@ jobs:
             bin
             src
 
-      - name: Set Eleventy .cache
-        uses: actions/cache@v4
-        with:
-          path: ${{ github.workspace }}/.image-cache
-          key: eleventy-img-cache
+      # - name: Set Eleventy .cache
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: ${{ github.workspace }}/.image-cache
+      #     key: eleventy-img-cache
 
       - name: Copy template files to combined dir
         run: |
@@ -105,7 +105,7 @@ jobs:
 
       - name: List remaining files
         run: |
-          echo $(find | sort)
+          echo $(find result | sort)
 
       # - name: Copy .image-cache out of result
       #   run: |
