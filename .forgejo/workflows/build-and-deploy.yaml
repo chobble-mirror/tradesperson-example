@@ -42,12 +42,7 @@ jobs:
           rsync \
             --recursive \
             --verbose \
-            --no-perms \
-            --chmod=ugo=rwX \
             --delete \
-            --exclude=".git" \
-            --exclude="node_modules" \
-            --exclude="*.md" \
             template/ \
             combined/
 
