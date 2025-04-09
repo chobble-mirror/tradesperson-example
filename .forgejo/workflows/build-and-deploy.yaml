@@ -15,14 +15,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: source
-          sparse-checkout-cone-mode: false
-          sparse-checkout: |
-            .image-cache
-            _data
-            _scss
-            assets
-            images
-            src
 
       - name: Checkout Chobble Template
         uses: actions/checkout@v4
@@ -63,6 +55,8 @@ jobs:
             --recursive \
             --verbose \
             --exclude=".git" \
+            --exclude=".image-cache" \
+            --exclude="bin/build" \
             source/ \
             combined/src/
 
