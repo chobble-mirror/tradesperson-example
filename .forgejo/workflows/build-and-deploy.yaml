@@ -64,7 +64,9 @@ jobs:
           mkdir combined/.image-cache
           rsync \
             --verbose \
-            source/.image-cache \
+            --no-perms \
+            --chmod=ugo=rwX \
+            source/.image-cache/ \
             combined/
 
       - name: Copy Forgejo cache into combined dir
@@ -72,6 +74,8 @@ jobs:
           mkdir -p .image-cache
           rsync \
             --verbose \
+            --no-perms \
+            --chmod=ugo=rwX \
             .image-cache/ \
             combined/.image-cache/
 
@@ -83,11 +87,6 @@ jobs:
           sed -i \
             's/"botpoison_public_key": null/"botpoison_public_key": "${{ secrets.BOTPOISON_PUBLIC_KEY }}"/g' \
             "combined/src/_data/site.json"
-
-      - name: Fix permissions
-        run: |
-          find combined -type d -exec chmod 755 {} \;
-          find combined -type f -exec chmod 644 {} \;
 
       - name: Build with Nix
         run: |
@@ -140,4 +139,6 @@ jobs:
 
       - name: Clean up
         run: |
+          find . -type d -exec chmod 755 {} \;
+          find . -type f -exec chmod 644 {} \;
           rm -rf result .image-cache
