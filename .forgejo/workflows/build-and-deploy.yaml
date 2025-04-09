@@ -100,7 +100,7 @@ jobs:
             --skip-cached \
             --flake ".#packages.x86_64-linux.site" \
             --no-nom
-          mv combined/result- result
+          mv result- ../result
 
       # - name: Copy .image-cache out of result
       #   run: |
