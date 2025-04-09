@@ -76,7 +76,8 @@ jobs:
 
       - name: Fix .image-cache permissions
         run: |
-          chmod 755 combined/.image-cache
+          find combined/.image-cache -type d -exec chmod 755 {} \;
+          find combined/.image-cache -type f -exec chmod 644 {} \;
 
       # - name: Copy Forgejo cache into combined dir
       #   run: |
