@@ -28,12 +28,11 @@ jobs:
             bin
             src
 
-      - name: Get Eleventy .cache
-        uses: actions/cache/restore@v4
+      - name: Set Eleventy .cache
+        uses: actions/cache@v4
         with:
-          path: .image-cache
+          path: ${{ github.workspace }}/.image-cache
           key: eleventy-img-cache
-          fail-on-cache-miss: false
 
       - name: Make combined dir
         run: mkdir combined
