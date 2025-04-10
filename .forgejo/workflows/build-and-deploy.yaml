@@ -9,7 +9,7 @@ env:
 
 jobs:
   build:
-    runs-on: chobble # native
+    runs-on: native
     steps:
       - name: Checkout this repo
         uses: actions/checkout@v4
@@ -32,11 +32,11 @@ jobs:
             bin
             src
 
-      - name: Set Eleventy .cache
-        uses: actions/cache@v4
-        with:
-          path: ${{ github.workspace }}/.image-cache
-          key: eleventy-img-cache
+      # - name: Set Eleventy .cache
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: ${{ github.workspace }}/.image-cache
+      #     key: eleventy-img-cache
 
       - name: Copy template files to combined dir
         run: |
@@ -73,16 +73,16 @@ jobs:
             source/.image-cache/ \
             combined/.image-cache/
 
-      - name: Copy Forgejo cache into combined dir
-        run: |
-          mkdir -p .image-cache
-          rsync \
-            --recursive \
-            --verbose \
-            --no-perms \
-            --chmod=ugo=rwX \
-            .image-cache/ \
-            combined/.image-cache/
+      # - name: Copy Forgejo cache into combined dir
+      #   run: |
+      #     mkdir -p .image-cache
+      #     rsync \
+      #       --recursive \
+      #       --verbose \
+      #       --no-perms \
+      #       --chmod=ugo=rwX \
+      #       .image-cache/ \
+      #       combined/.image-cache/
 
       - name: Update site.json with secrets
         run: |
@@ -102,19 +102,19 @@ jobs:
             --no-nom
           mv result- ../result
 
-      - name: Copy .image-cache out of result
-        run: |
-          rsync \
-            --recursive \
-            --delete \
-            result/.image-cache/ \
-            .image-cache/
+      # - name: Copy .image-cache out of result
+      #   run: |
+      #     rsync \
+      #       --recursive \
+      #       --delete \
+      #       result/.image-cache/ \
+      #       .image-cache/
 
-      - name: Save .image-cache to Forgejo cache
-        uses: actions/cache/save@v4
-        with:
-          path: ${{ github.workspace }}/.image-cache
-          key: eleventy-img-cache
+      # - name: Save .image-cache to Forgejo cache
+      #   uses: actions/cache/save@v4
+      #   with:
+      #     path: ${{ github.workspace }}/.image-cache
+      #     key: eleventy-img-cache
 
       - name: Deploy to Neocities
         uses: bcomnes/deploy-to-neocities@v3
