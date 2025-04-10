@@ -2,7 +2,7 @@
 title: Bathroom Renovation
 short_description: Transform your bathroom with a complete renovation
 price: From £7,500
-featured_image: placeholder-wide-2.jpg
+header_image: placeholder-wide-2.jpg
 categories:
   - renovations
 gallery: []

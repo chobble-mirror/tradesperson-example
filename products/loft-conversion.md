@@ -2,7 +2,7 @@
 title: Loft Conversion
 short_description: Convert your attic into valuable living space
 price: From £30,000
-featured_image: placeholder-wide-3.jpg
+header_image: placeholder-wide-3.jpg
 categories:
   - extensions
   - loft-conversions

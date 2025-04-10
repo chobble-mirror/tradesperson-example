@@ -2,7 +2,7 @@
 title: Single-Story Extension
 short_description: Expand your living space with a quality extension
 price: From £25,000
-featured_image: placeholder-wide-1.jpg
+header_image: placeholder-wide-1.jpg
 categories:
   - extensions
   - loft-conversions
