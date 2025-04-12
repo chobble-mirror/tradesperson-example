@@ -15,6 +15,13 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: source
+        
+      - name: Test Nix Sandbox
+        run: |
+          ls /
+          ls /home/
+          ls /home/user
+          ls /root
 
       - name: Checkout Chobble Template
         uses: actions/checkout@v4
