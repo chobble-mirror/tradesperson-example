@@ -99,7 +99,7 @@ h6 {
 }
 
 body > header {
-  background: var(--color-bg);
+  background-color: var(--color-bg);
   border-radius: var(--outer-border-radius);
   margin-top: 1rem;
   width: var(--width-content);
@@ -192,6 +192,15 @@ body > header {
   }
 }
 
+@keyframes fadeInNoSlide {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @keyframes slideIn {
   from {
     transform: translateX(-20px);
@@ -220,6 +229,7 @@ main {
       overflow: hidden;
       display: block;
       width: fit-content;
+      text-decoration: none;
 
       &::after {
         content: "";
@@ -251,7 +261,7 @@ main {
     }
 
     blockquote {
-      animation: fadeIn 0.8s ease 0.4s backwards;
+      animation: fadeInNoSlide 0.8s ease 0.4s backwards;
     }
 
     img {
@@ -694,6 +704,10 @@ ul.team {
     border: 1px solid #eee;
     text-align: center;
 
+    &.has-image {
+      padding-left: 0;
+    }
+
     @media (max-width: 768px) {
       width: 100%;
     }
@@ -714,22 +728,6 @@ ul.team {
     }
 
     &.has-image {
-      display: flex;
-      flex-direction: column;
-
-      .image {
-        width: 100%;
-        height: 300px;
-        overflow: hidden;
-
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          transition: all 0.5s ease;
-        }
-      }
-
       .team-content {
         padding: 2rem;
 
