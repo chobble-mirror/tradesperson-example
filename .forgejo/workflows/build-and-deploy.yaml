@@ -59,6 +59,7 @@ jobs:
             --verbose \
             --exclude=".git" \
             --exclude=".image-cache" \
+            # --exclude="bin/build" \
             --exclude="README.md" \
             source/ \
             combined/src/
