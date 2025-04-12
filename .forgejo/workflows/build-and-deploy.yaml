@@ -20,8 +20,7 @@ jobs:
         run: |
           ls /
           ls /home/
-          ls /home/user
-          ls /root
+          ls /home/user/git/dotfiles/
 
       - name: Checkout Chobble Template
         uses: actions/checkout@v4
