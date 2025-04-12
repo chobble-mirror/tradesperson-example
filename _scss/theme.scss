@@ -192,6 +192,15 @@ body > header {
   }
 }
 
+@keyframes fadeInNoSlide {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @keyframes slideIn {
   from {
     transform: translateX(-20px);
@@ -220,6 +229,7 @@ main {
       overflow: hidden;
       display: block;
       width: fit-content;
+      text-decoration: none;
 
       &::after {
         content: "";
@@ -251,7 +261,7 @@ main {
     }
 
     blockquote {
-      animation: fadeIn 0.8s ease 0.4s backwards;
+      animation: fadeInNoSlide 0.8s ease 0.4s backwards;
     }
 
     img {
