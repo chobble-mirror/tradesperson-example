@@ -32,12 +32,6 @@ jobs:
             bin
             src
 
-      # - name: Set Eleventy .cache
-      #   uses: actions/cache@v4
-      #   with:
-      #     path: ${{ github.workspace }}/.image-cache
-      #     key: eleventy-img-cache
-
       - name: Copy template files to combined dir
         run: |
           rm -rf combined
@@ -73,17 +67,6 @@ jobs:
             source/.image-cache/ \
             combined/.image-cache/
 
-      # - name: Copy Forgejo cache into combined dir
-      #   run: |
-      #     mkdir -p .image-cache
-      #     rsync \
-      #       --recursive \
-      #       --verbose \
-      #       --no-perms \
-      #       --chmod=ugo=rwX \
-      #       .image-cache/ \
-      #       combined/.image-cache/
-
       - name: Update site.json with secrets
         run: |
           sed -i \
@@ -98,29 +81,6 @@ jobs:
           cd combined
           npx @11ty/eleventy
           mv _site ../
-
-      # - name: Build with Nix
-      #   run: |
-      #     cd combined
-      #     nix-fast-build \
-      #       --skip-cached \
-      #       --flake ".#packages.x86_64-linux.site" \
-      #       --no-nom
-      #     mv result- ../result
-
-      # - name: Copy .image-cache out of result
-      #   run: |
-      #     rsync \
-      #       --recursive \
-      #       --delete \
-      #       result/.image-cache/ \
-      #       .image-cache/
-
-      # - name: Save .image-cache to Forgejo cache
-      #   uses: actions/cache/save@v4
-      #   with:
-      #     path: ${{ github.workspace }}/.image-cache
-      #     key: eleventy-img-cache
 
       - name: Deploy to Neocities
         uses: https://git.chobble.com/mirrored/deploy-to-neocities@v3
