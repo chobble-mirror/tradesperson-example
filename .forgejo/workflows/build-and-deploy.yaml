@@ -79,6 +79,7 @@ jobs:
       - name: Build with Yarn
         run: |
           cd combined
+          yarn install
           yarn eleventy
           mv _site ../
 
