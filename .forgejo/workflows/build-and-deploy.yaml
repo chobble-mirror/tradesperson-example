@@ -9,7 +9,7 @@ env:
 
 jobs:
   build:
-    runs-on: native
+    runs-on: chobble
     steps:
       - name: Checkout this repo
         uses: actions/checkout@v4
@@ -93,14 +93,19 @@ jobs:
             's/"botpoison_public_key": null/"botpoison_public_key": "${{ secrets.BOTPOISON_PUBLIC_KEY }}"/g' \
             "combined/src/_data/site.json"
 
-      - name: Build with Nix
+      - name: Build with Node
         run: |
           cd combined
-          nix-fast-build \
-            --skip-cached \
-            --flake ".#packages.x86_64-linux.site" \
-            --no-nom
-          mv result- ../result
+          npx @11ty/eleventy
+
+      # - name: Build with Nix
+      #   run: |
+      #     cd combined
+      #     nix-fast-build \
+      #       --skip-cached \
+      #       --flake ".#packages.x86_64-linux.site" \
+      #       --no-nom
+      #     mv result- ../result
 
       # - name: Copy .image-cache out of result
       #   run: |
@@ -123,13 +128,13 @@ jobs:
           cleanup: true
           neocities_supporter: true
           preview_before_deploy: false
-          dist_dir: ./result/_site
+          dist_dir: ./_site
 
       - name: Deploy to Bunny
         uses: R-J-dev/bunny-deploy@v2.0.6
         with:
           access-key: ${{ secrets.BUNNY_ACCESS_KEY }}
-          directory-to-upload: result/_site
+          directory-to-upload: _site
           storage-endpoint: "https://storage.bunnycdn.com"
           storage-zone-name: "chobble-tradesperson-example"
           storage-zone-password: ${{ secrets.BUNNY_STORAGE_ZONE_PASSWORD }}
