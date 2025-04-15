@@ -76,7 +76,7 @@ jobs:
             's/"botpoison_public_key": null/"botpoison_public_key": "${{ secrets.BOTPOISON_PUBLIC_KEY }}"/g' \
             "combined/src/_data/site.json"
 
-      - name: Build with Node
+      - name: Build with Yarn
         run: |
           cd combined
           yarn eleventy
