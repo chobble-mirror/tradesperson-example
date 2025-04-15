@@ -15,7 +15,7 @@ jobs:
         uses: https://git.chobble.com/mirrored/checkout@v4
         with:
           path: source
-        
+
       - name: Checkout Chobble Template
         uses: https://git.chobble.com/mirrored/checkout@v4
         with:
@@ -97,6 +97,7 @@ jobs:
         run: |
           cd combined
           npx @11ty/eleventy
+          mv _site ../
 
       # - name: Build with Nix
       #   run: |
