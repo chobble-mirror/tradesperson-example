@@ -32,12 +32,6 @@ jobs:
             bin
             src
 
-      # - name: Set Eleventy .cache
-      #   uses: actions/cache@v4
-      #   with:
-      #     path: ${{ github.workspace }}/.image-cache
-      #     key: eleventy-img-cache
-
       - name: Copy template files to combined dir
         run: |
           rm -rf combined
