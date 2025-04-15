@@ -60,17 +60,14 @@ rsync \
 
 cd "$COMBINED_DIR"
 
-nix-fast-build \
-  --skip-cached \
-  --flake ".#packages.x86_64-linux.site" \
-  --no-nom
+npm install
+npx @11ty/eleventy
 
 # Copy the image cache back to the original directory
 rsync \
   --recursive \
   --delete \
-  "result-/.image-cache" \
+  ".image-cache" \
   "$CLIENT_DIR/"
 
-rm -rf "$CLIENT_DIR/result"
-mv "result-" "$CLIENT_DIR/result"
+rm -rf _site

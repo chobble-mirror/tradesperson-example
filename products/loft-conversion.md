@@ -6,7 +6,14 @@ header_image: placeholder-wide-3.jpg
 categories:
   - extensions
   - loft-conversions
-gallery: []
+gallery:
+  Front: placeholder-square-7.jpg
+  Back: placeholder-square-6.jpg
+  Side: placeholder-square-5.jpg
+  Underside: placeholder-square-4.jpg
+  In use: placeholder-square-3.jpg
+  Not in use: placeholder-square-2.jpg
+  Invisible: placeholder-square-1.jpg
 specs:
   - name: Timeframe
     value: 8-12 weeks
