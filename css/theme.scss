@@ -218,8 +218,6 @@ main {
   max-width: 100%;
 
   #content {
-    animation: fadeIn 0.8s ease forwards;
-
     h2,
     h3,
     h4,
@@ -271,7 +269,6 @@ main {
       max-width: 100%;
       height: auto;
       border-radius: var(--outer-border-radius);
-      animation: fadeInNoSlide 0.3s ease 0s backwards;
     }
   }
 }
