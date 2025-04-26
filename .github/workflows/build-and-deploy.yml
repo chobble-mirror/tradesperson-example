@@ -85,10 +85,11 @@ jobs:
           name: combined-files
           path: combined
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 23
+          node-version: latest
+          cache: "npm"
+          cache-dependency-path: template/package-lock.json
 
       - name: Restore cache
         uses: actions/cache@v4
