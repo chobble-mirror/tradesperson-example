@@ -83,3 +83,14 @@ content:
       - { name: meta_title, type: string, label: Meta Title }
       - { name: subtitle, type: string, label: Subtitle }
       - { name: body, label: Body, type: code, options: { language: markdown } }
+  - name: team
+    label: Team
+    path: team
+    type: collection
+    subfolders: false
+    fields:
+      - { name: title, type: string, label: Name }
+      - { name: snippet, type: string, label: Role }
+      - { name: image, type: image, label: Profile Image }
+      - { name: header_image, type: image, label: Header Image }
+      - { name: body, label: Biography, type: code, options: { language: markdown } }
