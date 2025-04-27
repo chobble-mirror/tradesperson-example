@@ -6,7 +6,7 @@ meta_description: Get in touch with Joe Example Building Services in Manchester
 meta_title: Contact
 eleventyNavigation:
   key: Contact
-  order: 5
+  order: 99
 layout: contact.html
 permalink: /contact/
 ---
