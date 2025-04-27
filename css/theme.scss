@@ -448,6 +448,7 @@ ul.news-posts {
 }
 
 blockquote {
+  position: relative;
   color: #555;
 
   &::before {
