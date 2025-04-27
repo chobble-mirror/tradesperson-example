@@ -1,11 +1,9 @@
 ---
 title: Mike Builder
 snippet: Lead Carpenter & Joiner
-image: placeholder-square-4.jpg
-header_image: placeholder-wide-3.jpg
+image: /images/placeholder-square-4.jpg
+header_image: /images/placeholder-wide-3.jpg
 ---
-
-![Mike Builder](/images/placeholder-square-4.jpg)
 
 > "Wood is one of nature's most versatile materials - with the right skills and vision, the possibilities are endless."
 

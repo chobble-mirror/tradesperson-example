@@ -1,5 +1,5 @@
 ---
-header_image: placeholder.jpg
+header_image: /images/placeholder.jpg
 header_text: Contact Joe Example
 meta_description: Get in touch with Joe Example Building Services in Manchester - free quotes for all building work
 meta_title: Contact

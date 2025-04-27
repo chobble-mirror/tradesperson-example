@@ -1,11 +1,9 @@
 ---
 title: Sarah Tech
 snippet: Project Manager & Designer
-image: placeholder-square-5.jpg
-header_image: placeholder-wide-2.jpg
+image: /images/placeholder-square-5.jpg
+header_image: /images/placeholder-wide-2.jpg
 ---
-
-![Sarah Tech](/images/placeholder-square-5.jpg)
 
 > "The best renovations balance beautiful design with practical functionality - creating spaces that work for real people."
 

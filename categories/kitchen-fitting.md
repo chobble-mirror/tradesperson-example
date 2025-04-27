@@ -1,7 +1,7 @@
 ---
 title: Kitchen Fitting
 description: Kitchen design and installation services
-header_image: placeholder-wide-2.jpg
+header_image: /images/placeholder-wide-2.jpg
 parent: renovations
 ---
 

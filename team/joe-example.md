@@ -1,11 +1,9 @@
 ---
 title: Joe Example
 snippet: Owner & Master Builder
-image: placeholder-square-3.jpg
-header_image: placeholder-wide-3.jpg
+image: /images/placeholder-square-3.jpg
+header_image: /images/placeholder-wide-3.jpg
 ---
-
-![Joe Example](/images/placeholder-square-3.jpg)
 
 > "Quality work isn't just about the materials you use, but the care and attention to detail you put into every project."
 

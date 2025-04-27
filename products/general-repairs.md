@@ -2,18 +2,18 @@
 title: General Repairs and Maintenance
 short_description: Reliable property maintenance and repair services
 price: From £150
-header_image: placeholder-wide-5.jpg
+header_image: /images/placeholder-wide-5.jpg
 categories:
   - renovations
   - general-building
 gallery:
-  Front: placeholder-square-7.jpg
-  Back: placeholder-square-6.jpg
-  Side: placeholder-square-5.jpg
-  Underside: placeholder-square-4.jpg
-  In use: placeholder-square-3.jpg
-  Not in use: placeholder-square-2.jpg
-  Invisible: placeholder-square-1.jpg
+  - /images/placeholder-square-7.jpg
+  - /images/placeholder-square-6.jpg
+  - /images/placeholder-square-5.jpg
+  - /images/placeholder-square-4.jpg
+  - /images/placeholder-square-3.jpg
+  - /images/placeholder-square-2.jpg
+  - /images/placeholder-square-1.jpg
 specs:
   - name: Timeframe
     value: Typically 1-3 days

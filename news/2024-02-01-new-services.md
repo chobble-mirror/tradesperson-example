@@ -1,5 +1,5 @@
 ---
-header_image: placeholder.jpg
+header_image: /images/placeholder.jpg
 header_text: New Kitchen Design Service Launched
 meta_description: Joe Example Building Services announces new 3D kitchen design service for Manchester homeowners
 meta_title: New Kitchen Design Service

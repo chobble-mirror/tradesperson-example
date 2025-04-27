@@ -1,5 +1,5 @@
 ---
-header_image: placeholder.jpg
+header_image: /images/placeholder.jpg
 header_text: Important Updates to Building Regulations
 meta_description: Joe Example Building Services discusses the new building regulations affecting extensions and renovations in Manchester
 meta_title: Building Regulation Updates 2024

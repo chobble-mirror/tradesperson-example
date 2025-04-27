@@ -1,11 +1,9 @@
 ---
 title: Dave Sparks
 snippet: Qualified Electrician
-image: placeholder-square-6.jpg
-header_image: placeholder-wide-4.jpg
+image: /images/placeholder-square-6.jpg
+header_image: /images/placeholder-wide-4.jpg
 ---
-
-![Dave Sparks](/images/placeholder-square-6.jpg)
 
 > "Electrical work isn't just about connecting wires - it's about building safe, efficient systems that meet modern needs while anticipating future ones."
 

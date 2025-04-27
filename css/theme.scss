@@ -703,10 +703,6 @@ ul.team {
     border: 1px solid #eee;
     text-align: center;
 
-    &.has-image {
-      padding-left: 0;
-    }
-
     @media (max-width: 768px) {
       width: 100%;
     }
@@ -727,6 +723,10 @@ ul.team {
     }
 
     &.has-image {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
       .team-content {
         padding: 2rem;
 

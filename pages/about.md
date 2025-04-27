@@ -1,5 +1,5 @@
 ---
-header_image: placeholder.jpg
+header_image: /images/placeholder.jpg
 header_text: About Joe Example Building
 meta_description: Learn about Joe Example Building Services - your trusted building contractor in Manchester with 15+ years of experience
 meta_title: About

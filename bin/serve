@@ -1,5 +1,5 @@
 #!/usr/bin/env nix-shell
-#! nix-shell -i bash -p bash git inotify-tools rsync nodejs yarn sass
+#! nix-shell -i bash -p bash git inotify-tools rsync nodejs_23
 
 set -e
 
@@ -20,8 +20,6 @@ else
   git reset --hard origin/main
 fi
 
-mkdir -p "$COMBINED_DIR/.image-cache"
-
 find "$COMBINED_DIR" -type f -name "*.md" -delete
 
 rsync \
@@ -37,12 +35,7 @@ rsync \
     --exclude=".git" \
     --exclude="*.nix" \
     --exclude="README.md" \
-    --exclude=".image-cache" \
     "$CLIENT_DIR/" "$COMBINED_DIR/src/"
-
-rsync \
-    --recursive \
-    "$CLIENT_DIR/.image-cache/" "$COMBINED_DIR/.image-cache"
 
 sync_client_files() {
   rsync \
@@ -73,11 +66,8 @@ WATCH_PID=$!
 
 cd "$COMBINED_DIR"
 
-if [ ! -d "node_modules" ]; then
-  yarn install
-fi
-
 rm -rf _site
-yarn eleventy \
+npm install --no-audit --no-fund
+npx @11ty/eleventy \
   --serve \
   --quiet

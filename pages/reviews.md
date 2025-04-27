@@ -1,5 +1,5 @@
 ---
-header_image: placeholder.jpg
+header_image: /images/placeholder.jpg
 header_text: Customer Reviews
 meta_description: Read what our customers say about Joe Example Building Services in Manchester - testimonials from satisfied clients
 meta_title: Reviews

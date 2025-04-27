@@ -1,5 +1,5 @@
 ---
-header_image: placeholder.jpg
+header_image: /images/placeholder.jpg
 header_text: Joe Example - Builder Manchester
 meta_description: Professional building services in Manchester - extensions, renovations, and home improvements by Joe Example
 meta_title: Home

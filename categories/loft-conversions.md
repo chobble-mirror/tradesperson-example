@@ -1,7 +1,7 @@
 ---
 title: Loft Conversions
 description: Professional loft conversion services
-header_image: placeholder-wide-3.jpg
+header_image: /images/placeholder-wide-3.jpg
 parent: extensions
 ---
 

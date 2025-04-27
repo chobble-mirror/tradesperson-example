@@ -1,5 +1,5 @@
 ---
-header_image: placeholder.jpg
+header_image: /images/placeholder.jpg
 header_text: Supporting the Next Generation of Builders
 meta_description: Joe Example Building Services launches apprenticeship program for young builders in Manchester
 meta_title: New Building Apprenticeship Program

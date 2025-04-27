@@ -1,5 +1,5 @@
 ---
-header_image: placeholder.jpg
+header_image: /images/placeholder.jpg
 header_text: Our Team
 meta_description: Meet the team at Joe Example Building Services - qualified professionals serving Manchester
 meta_title: Our Team

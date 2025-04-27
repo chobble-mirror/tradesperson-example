@@ -1,5 +1,5 @@
 ---
-header_image: placeholder.jpg
+header_image: /images/placeholder.jpg
 header_text: Our Services
 meta_description: Building services in Manchester - extensions, renovations, loft conversions, kitchen fitting and more
 meta_title: Building Services

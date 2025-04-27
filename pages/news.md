@@ -1,5 +1,5 @@
 ---
-header_image: placeholder.jpg
+header_image: /images/placeholder.jpg
 header_text: Latest News & Building Advice
 meta_description: Stay updated with the latest news from Joe Example Building Services - building advice, industry updates, and company announcements
 meta_title: Latest Building News & Advice
