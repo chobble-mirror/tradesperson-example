@@ -1,5 +1,5 @@
 ---
-header_image: placeholder-wide-1.jpg
+header_image: /images/placeholder-wide-1.jpg
 title: Product Launch Event
 meta_description: Our annual product launch showcasing new widgets
 meta_title: Product Launch Event

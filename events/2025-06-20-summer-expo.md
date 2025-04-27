@@ -1,5 +1,5 @@
 ---
-header_image: placeholder-wide-2.jpg
+header_image: /images/placeholder-wide-2.jpg
 title: Summer Expo
 subtitle: Exclusive deals aplenty!
 meta_description: Join us for our upcoming Summer Expo with exclusive deals
