@@ -1,15 +1,15 @@
 ---
 header_image: placeholder.jpg
 header_text: Contact Joe Example
-meta_description: Get in touch with Joe Example Building Services in Manchester - free quotes for all building work
+meta_description: Get in touch with Joe Example Building Services in Manchester
+  - free quotes for all building work
 meta_title: Contact
-
-layout: contact.html
 eleventyNavigation:
   key: Contact
   order: 5
+layout: contact.html
+permalink: /contact/
 ---
-
 ## Get In Touch
 
 Contact Joe Example Building Services today for a free, no-obligation quote on your building project. We serve Manchester and surrounding areas with professional building services.
