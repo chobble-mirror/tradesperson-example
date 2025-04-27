@@ -6,9 +6,11 @@ meta_description: Meet the team at Joe Example Building Services - qualified
 meta_title: Our Team
 eleventyNavigation:
   key: Team
+  parent: About
 layout: team.html
 permalink: /team/
 ---
+
 ## Our Building Team
 
 At Joe Example Building Services, we employ only the most skilled and reliable tradespeople to ensure your project is completed to the highest standard.
