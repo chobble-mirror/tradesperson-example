@@ -1,13 +1,12 @@
 ---
 header_image: /images/placeholder-wide-1.jpg
 title: Product Launch Event
-meta_description: Our annual product launch showcasing new widgets
-meta_title: Product Launch Event
 subtitle: Past Event - Product Launch
 event_date: 2023-10-15
-event_location: Downtown Conference Center
+event_location: Prestwich Longfield Suite
+meta_title: Product Launch Event
+meta_description: Our annual product launch showcasing new widgets
 ---
-
 We hosted our annual product launch event showcasing our latest widget innovations. Attendees enjoyed demonstrations of our newest models and networking opportunities with industry professionals.
 
 > The highlight was our unveiling of the UltraWidget Pro, which received enthusiastic response from all participants.
