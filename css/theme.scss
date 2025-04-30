@@ -279,12 +279,12 @@ nav {
 
 .contact-form {
   background: var(--color-bg);
-  color: var(--color-bg-main);
+  color: var(--color-link);
   border-top: 5px solid var(--color-bg-secondary);
 
   button {
     background: var(--color-bg-secondary);
-    color: var(--color-bg-main);
+    color: var(--color-link);
 
     &:hover {
       background: var(--color-secondary-accent);
