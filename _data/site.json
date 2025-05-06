@@ -15,8 +15,6 @@
   "sticky_mobile_nav": true,
   "template_repo_url": "https://git.chobble.com/chobble/chobble-template",
   "products": {
-    "product_thumb_widths": "240,480",
-    "category_thumb_widths": "1300,900",
     "gallery_thumb_widths": "240,480",
     "gallery_image_widths": "1300,900",
     "header_image_widths": "1300,900"
