@@ -2,6 +2,24 @@
 @use "sass:color";
 
 :root {
+  --active-brightness: 0.85;
+  --border-radius: 5px;
+  --border-radius-small: 0;
+  --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  --color-accent: #118bee15;
+  --color-scrollbar: #cacae8;
+  --color-shadow: #f4f4f4;
+  --color-table: #118bee;
+  --hover-brightness: 1.2;
+  --justify-important: center;
+  --justify-normal: left;
+  --line-height: 1.8;
+  --width-card-medium: 460px;
+  --width-card-wide: 800px;
+  --width-card: 285px;
+  --width-content: 1080px;
+  --width-content: 1300px;
+
   --color-bg: #2b2b2b; /* Dark gray for header/footer background */
   --color-bg-secondary: #c74f00; /* Orange accent color */
   --color-bg-main: #ffffff; /* White for main content */
@@ -226,7 +244,8 @@ main {
       animation: fadeIn 0.8s ease 0.3s backwards;
     }
 
-    blockquote {
+    blockquote,
+    .gallery {
       animation: fadeInNoSlide 0.8s ease 0.4s backwards;
     }
   }
@@ -264,16 +283,20 @@ nav {
       position: relative;
     }
   }
-
   a {
     &:hover {
-      color: var(--color-bg-secondary);
       transform: translateX(5px);
     }
+  }
+}
 
-    &.active {
-      color: var(--color-bg-secondary);
-    }
+a {
+  color: var(--color-link);
+  text-decoration: none;
+
+  &:hover,
+  &:active {
+    color: var(--color-bg-secondary);
   }
 }
 
@@ -372,6 +395,7 @@ ul.image-gallery {
 
 ul.team {
   li {
+    transition: transform 0.3s ease-in;
     &:hover {
       transform: translateY(-5px);
 

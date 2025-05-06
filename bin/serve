@@ -10,7 +10,7 @@ TEMPLATE_REPO="https://git.chobble.com/chobble/chobble-template.git"
 TEMPLATE_DIR="$DEV_DIR/template"
 COMBINED_DIR="$DEV_DIR/dev"
 
-mkdir -p "$DEV_DIR"
+mkdir -p "$COMBINED_DIR"
 
 if [ ! -d "$TEMPLATE_DIR" ]; then
   git clone "$TEMPLATE_REPO" "$TEMPLATE_DIR"

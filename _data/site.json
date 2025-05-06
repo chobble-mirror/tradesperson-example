@@ -11,6 +11,7 @@
     "WhatsApp": "https://tradesperson-example.chobble.com",
     "RSS": "/feed.xml"
   },
+  "horizontal_nav": false,
   "sticky_mobile_nav": true,
   "template_repo_url": "https://git.chobble.com/chobble/chobble-template",
   "products": {
