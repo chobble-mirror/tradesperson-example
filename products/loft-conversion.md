@@ -5,6 +5,8 @@ categories:
   - extensions
   - loft-conversions
 price: From £30,000
+gallery:
+  - /images/pexels-pixabay-271743.jpg
 ---
 # Loft Conversions Manchester - Transform Your Unused Space
 
