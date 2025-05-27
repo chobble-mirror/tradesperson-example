@@ -9,14 +9,10 @@ features:
   - Skip hire and waste removal included
   - Dedicated point of contact throughout
 specs:
-  - name: Timeline
-    value: 4 - 6 weeks from initial meeting
-  - name: Warranties
-    value: 15 years structural, 3 years finish
-  - name: Insulation
-    value: 300mm+, exceeds building regs by 25%
-  - name: Load capacity
-    value: 150kg per m²
+  - value: 4 - 6 weeks from initial meeting
+  - value: 15 years structural, 3 years finish
+  - value: 300mm+, exceeds building regs by 25%
+  - value: 150kg per m²
 gallery:
   - /images/pexels-heyho-6032424.jpg
   - /images/pexels-pixabay-271743.jpg
@@ -28,8 +24,9 @@ meta_description: With 20+ years experience in loft conversions, we offer a 15
 meta_title: Loft Conversions in Manchester
 subtitle: Turn Your Loft Into A Proper Living Space
 ---
+Need more room? We'll convert your loft in just **6-8 weeks**, with prices averaging **around £30k**.
 
-Need more room? We'll convert your loft in just 6-8 weeks, with prices starting at about £30k.
+All loft conversions come with a **15-year insurance-backed guarantee**.
 
 Loft conversions add 15-20% to your house value ([source](https://resi.co.uk/advice/loft-conversions/loft-conversions-add-value-to-your-home)).
 
@@ -37,7 +34,7 @@ Loft conversions add 15-20% to your house value ([source](https://resi.co.uk/adv
 
 - We're local - 1900s-1930s semis are our bread & butter
 - 90% of jobs need no planning permission
-- 10-year structural guarantee
+- 15-year structural guarantee
 - 25% payment up front
 - We do everything: insulation, electrics, windows, storage - even plumbing
 
@@ -47,4 +44,4 @@ Loft conversions add 15-20% to your house value ([source](https://resi.co.uk/adv
 
 **Free consultation** - we'll measure up and give you a proper quote, valid for 18 months.
 
-_10-year guarantee • Fully insured_
+We have converted lofts across all of **North Manchester** including **Prestwich**, **Whitefield**, **Radcliffe**, **Bury** and **Middleton**.
