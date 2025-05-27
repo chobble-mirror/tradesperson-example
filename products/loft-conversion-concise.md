@@ -1,6 +1,6 @@
 ---
 header_image: /images/pexels-pixabay-271743.jpg
-title: Lof Conversion (concise)
+title: Loft Conversion (concise)
 categories:
   - loft-conversions.md
 price: from £30,000
