@@ -7,6 +7,7 @@ categories:
 price: From £30,000
 gallery:
   - /images/pexels-pixabay-271743.jpg
+header_text: Loft Conversion
 ---
 # Loft Conversions Manchester - Transform Your Unused Space
 
