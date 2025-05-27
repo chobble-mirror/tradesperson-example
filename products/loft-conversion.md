@@ -1,5 +1,5 @@
 ---
-header_image: /images/placeholder-wide-3.jpg
+header_image: /images/pexels-pixabay-271743.jpg
 title: Loft Conversion (verbose)
 categories:
   - extensions
