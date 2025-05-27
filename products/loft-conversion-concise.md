@@ -20,6 +20,8 @@ specs:
 gallery:
   - /images/pexels-heyho-6032424.jpg
   - /images/pexels-pixabay-271743.jpg
+  - /images/pexels-heyho-7045310(1).jpg
+  - /images/pexels-heyho-7745931(1).jpg
 header_text: Loft Conversions in Manchester
 meta_description: With 20+ years experience in loft conversions, we offer a 15
   year guarantee with flexible options to suit any attic space
