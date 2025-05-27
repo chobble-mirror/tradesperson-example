@@ -8,6 +8,7 @@ content:
     path: pages
     type: collection
     subfolders: false
+    filename: '{primary}.md'
     view:
       fields: [permalink, name, meta_title, header_text]
       primary: name
@@ -47,10 +48,10 @@ content:
     path: products
     type: collection
     subfolders: false
+    filename: '{primary}.md'
     fields:
       - { name: header_image, type: image, label: Header Image }
       - { name: title, type: string, label: Title }
-      - { name: date, label: Date, type: date }
       - name: categories
         label: Categories
         type: reference
@@ -87,6 +88,7 @@ content:
     path: categories
     type: collection
     subfolders: false
+    filename: '{primary}.md'
     fields:
       - { name: title, type: string, label: Title }
       - { name: body, label: Body, type: code, options: { language: markdown } }
@@ -101,6 +103,7 @@ content:
     path: team
     type: collection
     subfolders: false
+    filename: '{primary}.md'
     fields:
       - { name: title, type: string, label: Name }
       - { name: snippet, type: string, label: Role }
@@ -117,6 +120,7 @@ content:
     path: reviews
     type: collection
     subfolders: false
+    filename: '{primary}.md'
     fields:
       - { name: name, type: string, label: Client Name }
       - { name: project, type: string, label: Project Type }
@@ -131,6 +135,7 @@ content:
     path: events
     type: collection
     subfolders: false
+    filename: '{event_date}-{primary}.md'
     view:
       fields: [title, event_date, event_location]
       primary: title
