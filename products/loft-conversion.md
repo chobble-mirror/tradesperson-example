@@ -1,44 +1,65 @@
 ---
-title: Loft Conversion
-short_description: Convert your attic into valuable living space
-price: From £30,000
 header_image: /images/placeholder-wide-3.jpg
+title: Loft Conversion (verbose)
 categories:
   - extensions
   - loft-conversions
-gallery:
-  - /images/placeholder-square-7.jpg
-  - /images/placeholder-square-6.jpg
-  - /images/placeholder-square-5.jpg
-  - /images/placeholder-square-4.jpg
-  - /images/placeholder-square-3.jpg
-  - /images/placeholder-square-2.jpg
-  - /images/placeholder-square-1.jpg
-specs:
-  - name: Timeframe
-    value: 8-12 weeks
-  - name: Planning Permission
-    value: Depends on design
-  - name: Building Regulations
-    value: Full compliance assured
-  - name: Structural Changes
-    value: Professional structural assessment
-  - name: Warranty
-    value: 10-year guarantee
-  - name: Accessibility
-    value: Proper staircase installation
-features:
-  - Full structural assessment and modifications
-  - Proper insulation and ventilation
-  - New windows and skylights
-  - Quality finish including plastering and decorating
-  - Electrical installations to building regulations
+price: From £30,000
 ---
+# Loft Conversions Manchester - Transform Your Unused Space
 
-Transform your unused attic space into a valuable new room with our professional loft conversion service. Whether you're looking to add a bedroom, bathroom, office, or playroom, our team can help you maximize your home's potential.
+## Create Your Dream Room in the Heart of Manchester
 
-Every loft conversion begins with a thorough structural assessment to determine the best approach. We handle all structural modifications, including installing support beams, floor joists, and proper access via a staircase.
+Are you looking to add valuable living space to your Manchester home without the hassle of moving? Our professional loft conversion service transforms your unused attic into a beautiful, functional room that perfectly suits your lifestyle and adds significant value to your property.
 
-Our loft conversions include proper insulation, ventilation, and windows to create a comfortable, light-filled space that can be used year-round. All electrical and plumbing work is completed to current building regulations by certified professionals.
+## Why Choose Our Loft Conversion Service?
 
-We take care of all the finishing touches, from plastering and decorating to fitting doors and skirting boards, delivering a fully completed space ready for immediate use.
+**Local Manchester Expertise**
+With years of experience working throughout Greater Manchester, we understand the unique characteristics of local housing stock, from Victorian terraces in Didsbury to modern developments in MediaCity. Our team is fully familiar with Manchester City Council planning requirements and building regulations.
+
+**Complete Project Management**
+From initial design consultation through to final completion, we handle every aspect of your loft conversion:
+- Architectural design and planning applications
+- Structural calculations and building control approval
+- All construction work including insulation, electrics, and plumbing
+- Plastering, flooring, and finishing touches
+
+**Quality Craftsmanship**
+We pride ourselves on delivering exceptional results using high-quality materials and proven construction techniques. Every conversion is completed to the highest standards with full guarantees for your peace of mind.
+
+## Types of Loft Conversions We Offer
+
+**Dormer Conversions**
+Perfect for creating maximum headroom and floor space, ideal for bedrooms or home offices.
+
+**Hip-to-Gable Conversions**
+Excellent for semi-detached and end-terrace properties, significantly increasing usable space.
+
+**Mansard Conversions**
+The ultimate space-maximizing solution, creating substantial additional living area.
+
+**Velux Conversions**
+A cost-effective option using roof windows to create bright, airy spaces.
+
+## Popular Uses for Your New Space
+
+- **Master bedroom with en-suite**
+- **Home office or study**
+- **Children's playroom**
+- **Guest bedroom**
+- **Art studio or hobby room**
+- **Teenage retreat**
+
+## The Manchester Advantage
+
+A well-executed loft conversion can add 15-20% to your property value while providing the extra space your family needs. With Manchester's thriving property market, investing in a loft conversion is both a practical and financially smart decision.
+
+## Get Started Today
+
+Ready to unlock your home's potential? Contact us for a free, no-obligation consultation and quote. We'll assess your property, discuss your requirements, and provide expert advice on the best conversion option for your Manchester home.
+
+**Call us today or email to arrange your free consultation.**
+
+*Fully insured • Local references available • Free quotes • Competitive pricing*
+
+*Serving all areas of Manchester including City Centre, Didsbury, Chorlton, Altrincham, Sale, Stockport, Oldham, Bolton, and surrounding areas.*
