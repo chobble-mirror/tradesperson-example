@@ -9,13 +9,13 @@ features:
   - Skip hire and waste removal included
   - Dedicated point of contact throughout
 specs:
-  - key: Timeline
+  - name: Timeline
     value: 4 - 6 weeks from initial meeting
-  - key: Warranties
+  - name: Warranties
     value: 15 years structural, 3 years finish
-  - key: Insulation
+  - name: Insulation
     value: 300mm+, exceeds building regs by 25%
-  - key: Load capacity
+  - name: Load capacity
     value: 150kg per m²
 gallery:
   - /images/pexels-heyho-6032424.jpg
@@ -28,6 +28,7 @@ meta_description: With 20+ years experience in loft conversions, we offer a 15
 meta_title: Loft Conversions in Manchester
 subtitle: Turn Your Loft Into A Proper Living Space
 ---
+
 Need more room? We'll convert your loft in just 6-8 weeks, with prices starting at about £30k.
 
 Loft conversions add 15-20% to your house value ([source](https://resi.co.uk/advice/loft-conversions/loft-conversions-add-value-to-your-home)).
@@ -46,4 +47,4 @@ Loft conversions add 15-20% to your house value ([source](https://resi.co.uk/adv
 
 **Free consultation** - we'll measure up and give you a proper quote, valid for 18 months.
 
-*10-year guarantee • Fully insured*
+_10-year guarantee • Fully insured_
